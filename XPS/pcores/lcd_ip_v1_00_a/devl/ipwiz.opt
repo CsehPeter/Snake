@@ -1,0 +1,7 @@
+-batch 
+-create lcd_ip 
+-ver 1.00.a 
+-dir "E:\Snake\XPS" 
+-lang vhdl 
+-bus axi4lite s 
+-xps 
