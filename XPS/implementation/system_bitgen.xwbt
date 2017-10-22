@@ -1,0 +1,7 @@
+INFILE=E:\Snake\XPS\implementation\system.ncd
+OUTFILE=E:\Snake\XPS\implementation\system.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=E:\Snake\XPS\implementation
+LICENSE=WebPack
+USER_INFO=__0_0_0
