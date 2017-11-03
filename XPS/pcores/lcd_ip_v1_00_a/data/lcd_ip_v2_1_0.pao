@@ -1,0 +1,13 @@
+##############################################################################
+## Filename:          E:/Snake/XPS/pcores/lcd_ip_v1_00_a/data/lcd_ip_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Mon Oct 30 19:32:40 2017 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib lcd_ip_v1_00_a spi vhdl
+lib lcd_ip_v1_00_a fifo vhdl
+lib lcd_ip_v1_00_a bus_if vhdl
+lib lcd_ip_v1_00_a user_logic verilog
+lib lcd_ip_v1_00_a lcd_ip vhdl

@@ -8,8 +8,8 @@ TABLE OF CONTENTS
 Peripheral Summary:
 
   XPS project / EDK repository               : E:\Snake\XPS
-  logical library name                       : cpld_peri_ip_v1_00_a
-  top name                                   : cpld_peri_ip
+  logical library name                       : lcd_ip_v1_00_a
+  top name                                   : lcd_ip
   version                                    : 1.00.a
   type                                       : AXI4LITE slave
   features                                   : slave attachment
@@ -26,7 +26,7 @@ Address Block for User Logic and IPIF Predefined Services
 ================================================================================
 - HDL source file(s)
 
-  hdl/vhdl/cpld_peri_ip.vhd
+  hdl/vhdl/lcd_ip.vhd
 
     This is the template file for your peripheral's top design entity. It
     configures and instantiates the corresponding design units in the way you
@@ -35,7 +35,7 @@ Address Block for User Logic and IPIF Predefined Services
     modify this template file except certain marked places for adding user
     specific generics and ports.
 
-  vhdl/user_logic.vhd
+  verilog/user_logic.v
 
     This is the template file for the stub user logic design entity, either in
     VHDL or Verilog, where the actual functionalities should get implemented.
@@ -43,13 +43,13 @@ Address Block for User Logic and IPIF Predefined Services
 
 - XPS interface file(s)
 
-  data/cpld_peri_ip_v2_1_0.mpd
+  data/lcd_ip_v2_1_0.mpd
 
     This Microprocessor Peripheral Description file contains information of the
     interface of your peripheral, so that other EDK tools can recognize your
     peripheral.
 
-  data/cpld_peri_ip_v2_1_0.pao
+  data/lcd_ip_v2_1_0.pao
 
     This Peripheral Analysis Order file defines the analysis order of all the HDL
     source files that are used to compile your peripheral.

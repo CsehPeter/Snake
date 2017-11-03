@@ -1,8 +1,8 @@
 -batch 
--create cpld_peri_ip 
+-create lcd_ip 
 -ver 1.00.a 
 -dir "E:\Snake\XPS" 
--lang vhdl 
+-lang verilog 
 -bus axi4lite s 
--reg 4 
+-reg 2 
 -xps 

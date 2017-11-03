@@ -122,8 +122,10 @@ C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl
 C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd \
 C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd \
 C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd \
-pcores/cpld_peri_ip_v1_00_a/hdl/vhdl/user_logic.vhd \
-pcores/cpld_peri_ip_v1_00_a/hdl/vhdl/cpld_peri_ip.vhd
+pcores/lcd_ip_v1_00_a/hdl/verilog/user_logic.v \
+pcores/lcd_ip_v1_00_a/hdl/vhdl/lcd_ip.vhd \
+pcores/logsys_axi_sp6_simpleio_v1_00_a/hdl/verilog/user_logic.v \
+pcores/logsys_axi_sp6_simpleio_v1_00_a/hdl/vhdl/logsys_axi_sp6_simpleio.vhd
 
 WRAPPER_NGC_FILES = implementation/system_proc_sys_reset_0_wrapper.ngc \
 implementation/system_microblaze_0_ilmb_wrapper.ngc \
@@ -136,7 +138,8 @@ implementation/system_debug_module_wrapper.ngc \
 implementation/system_clock_generator_0_wrapper.ngc \
 implementation/system_axi4lite_0_wrapper.ngc \
 implementation/system_axi_uartlite_0_wrapper.ngc \
-implementation/system_cpld_peri_ip_0_wrapper.ngc
+implementation/system_lcd_ip_0_wrapper.ngc \
+implementation/system_logsys_axi_sp6_simpleio_0_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 

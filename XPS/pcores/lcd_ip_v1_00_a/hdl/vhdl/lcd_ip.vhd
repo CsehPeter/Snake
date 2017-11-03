@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
--- cpld_peri_ip.vhd - entity/architecture pair
+-- lcd_ip.vhd - entity/architecture pair
 ------------------------------------------------------------------------------
 -- IMPORTANT:
 -- DO NOT MODIFY THIS FILE EXCEPT IN THE DESIGNATED SECTIONS.
@@ -32,10 +32,10 @@
 -- ***************************************************************************
 --
 ------------------------------------------------------------------------------
--- Filename:          cpld_peri_ip.vhd
+-- Filename:          lcd_ip.vhd
 -- Version:           1.00.a
 -- Description:       Top level design, instantiates library components and user logic.
--- Date:              Sat Oct 07 12:32:14 2017 (by Create and Import Peripheral Wizard)
+-- Date:              Mon Oct 30 19:32:40 2017 (by Create and Import Peripheral Wizard)
 -- VHDL Standard:     VHDL'93
 ------------------------------------------------------------------------------
 -- Naming Conventions:
@@ -68,9 +68,6 @@ use proc_common_v3_00_a.ipif_pkg.all;
 
 library axi_lite_ipif_v1_01_a;
 use axi_lite_ipif_v1_01_a.axi_lite_ipif;
-
-library cpld_peri_ip_v1_00_a;
-use cpld_peri_ip_v1_00_a.user_logic;
 
 ------------------------------------------------------------------------------
 -- Entity section
@@ -111,7 +108,7 @@ use cpld_peri_ip_v1_00_a.user_logic;
 --   S_AXI_AWREADY                -- AXI4LITE slave: Wrte address ready
 ------------------------------------------------------------------------------
 
-entity cpld_peri_ip is
+entity lcd_ip is
   generic
   (
     -- ADD USER GENERICS BELOW THIS LINE ---------------
@@ -128,7 +125,7 @@ entity cpld_peri_ip is
     C_BASEADDR                     : std_logic_vector     := X"FFFFFFFF";
     C_HIGHADDR                     : std_logic_vector     := X"00000000";
     C_FAMILY                       : string               := "virtex6";
-    C_NUM_REG                      : integer              := 1;
+    C_NUM_REG                      : integer              := 2;
     C_NUM_MEM                      : integer              := 1;
     C_SLV_AWIDTH                   : integer              := 32;
     C_SLV_DWIDTH                   : integer              := 32
@@ -138,6 +135,14 @@ entity cpld_peri_ip is
   (
     -- ADD USER PORTS BELOW THIS LINE ------------------
     --USER ports added here
+	
+	sdcard_csn : out std_logic;
+	flash_csn : out std_logic;
+	lcd_csn : out std_logic;
+	sck : out std_logic;
+	mosi : out std_logic;
+	miso : out std_logic;
+	
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -170,13 +175,13 @@ entity cpld_peri_ip is
   attribute MAX_FANOUT of S_AXI_ARESETN       : signal is "10000";
   attribute SIGIS of S_AXI_ACLK       : signal is "Clk";
   attribute SIGIS of S_AXI_ARESETN       : signal is "Rst";
-end entity cpld_peri_ip;
+end entity lcd_ip;
 
 ------------------------------------------------------------------------------
 -- Architecture section
 ------------------------------------------------------------------------------
 
-architecture IMP of cpld_peri_ip is
+architecture IMP of lcd_ip is
 
   constant USER_SLV_DWIDTH                : integer              := C_S_AXI_DATA_WIDTH;
 
@@ -192,7 +197,7 @@ architecture IMP of cpld_peri_ip is
       ZERO_ADDR_PAD & USER_SLV_HIGHADDR   -- user logic slave space high address
     );
 
-  constant USER_SLV_NUM_REG               : integer              := 4;
+  constant USER_SLV_NUM_REG               : integer              := 2;
   constant USER_NUM_REG                   : integer              := USER_SLV_NUM_REG;
   constant TOTAL_IPIF_CE                  : integer              := USER_NUM_REG;
 
@@ -231,6 +236,52 @@ architecture IMP of cpld_peri_ip is
   signal user_IP2Bus_RdAck              : std_logic;
   signal user_IP2Bus_WrAck              : std_logic;
   signal user_IP2Bus_Error              : std_logic;
+
+  ------------------------------------------
+  -- Component declaration for verilog user logic
+  ------------------------------------------
+  component user_logic is
+    generic
+    (
+      -- ADD USER GENERICS BELOW THIS LINE ---------------
+      --USER generics added here
+      -- ADD USER GENERICS ABOVE THIS LINE ---------------
+
+      -- DO NOT EDIT BELOW THIS LINE ---------------------
+      -- Bus protocol parameters, do not add to or delete
+      C_NUM_REG                      : integer              := 2;
+      C_SLV_DWIDTH                   : integer              := 32
+      -- DO NOT EDIT ABOVE THIS LINE ---------------------
+    );
+    port
+    (
+      -- ADD USER PORTS BELOW THIS LINE ------------------
+      --USER ports added here
+	  
+		sdcard_csn : out std_logic;
+		flash_csn : out std_logic;
+		lcd_csn : out std_logic;
+		sck : out std_logic;
+		mosi : out std_logic;
+		miso : out std_logic;
+	  
+	  -- ADD USER PORTS ABOVE THIS LINE ------------------
+
+      -- DO NOT EDIT BELOW THIS LINE ---------------------
+      -- Bus protocol ports, do not add to or delete
+      Bus2IP_Clk                     : in  std_logic;
+      Bus2IP_Resetn                  : in  std_logic;
+      Bus2IP_Data                    : in  std_logic_vector(C_SLV_DWIDTH-1 downto 0);
+      Bus2IP_BE                      : in  std_logic_vector(C_SLV_DWIDTH/8-1 downto 0);
+      Bus2IP_RdCE                    : in  std_logic_vector(C_NUM_REG-1 downto 0);
+      Bus2IP_WrCE                    : in  std_logic_vector(C_NUM_REG-1 downto 0);
+      IP2Bus_Data                    : out std_logic_vector(C_SLV_DWIDTH-1 downto 0);
+      IP2Bus_RdAck                   : out std_logic;
+      IP2Bus_WrAck                   : out std_logic;
+      IP2Bus_Error                   : out std_logic
+      -- DO NOT EDIT ABOVE THIS LINE ---------------------
+    );
+  end component user_logic;
 
 begin
 
@@ -288,7 +339,7 @@ begin
   ------------------------------------------
   -- instantiate User Logic
   ------------------------------------------
-  USER_LOGIC_I : entity cpld_peri_ip_v1_00_a.user_logic
+  USER_LOGIC_I : component user_logic
     generic map
     (
       -- MAP USER GENERICS BELOW THIS LINE ---------------
@@ -302,6 +353,14 @@ begin
     (
       -- MAP USER PORTS BELOW THIS LINE ------------------
       --USER ports mapped here
+	  
+		sdcard_csn => sdcard_csn,
+		flash_csn => flash_csn,
+		lcd_csn => lcd_csn,
+		sck => sck,
+		mosi => mosi,
+		miso => miso,
+	  
       -- MAP USER PORTS ABOVE THIS LINE ------------------
 
       Bus2IP_Clk                     => ipif_Bus2IP_Clk,

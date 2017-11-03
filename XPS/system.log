@@ -1290,3 +1290,104 @@ Done writing filter settings to:
 	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.filters
 Done writing Tab View settings to:
 	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.gui
+Xilinx Platform Studio (XPS)
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Writing filter settings....
+Done writing filter settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.filters
+Done writing Tab View settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.gui
+Assigned Driver generic 1.00.a for instance cpld_peri_ip_1
+cpld_peri_ip_1 has been added to the project
+WARNING:EDK:2137 - Peripheral cpld_peri_ip_1 is not accessible from any processor in the system. Check Bus Interface connections and address parameters. 
+Address Map for Processor microblaze_0
+  (0000000000-0x00003fff) microblaze_0_d_bram_ctrl	microblaze_0_dlmb
+  (0000000000-0x00003fff) microblaze_0_i_bram_ctrl	microblaze_0_ilmb
+  (0x40600000-0x4060ffff) axi_uartlite_0	axi4lite_0
+  (0x41400000-0x4140ffff) debug_module	axi4lite_0
+  (0x7d000000-0x7d00ffff) cpld_peri_ip_0	axi4lite_0
+  (0x7d020000-0x7d02ffff) cpld_peri_ip_1	axi4lite_0
+INFO:EDK - Use cpld_peri_ip_0 as reference
+INFO:EDK - Connect bus interface S_AXI to axi4lite_0
+INFO:EDK - Connect clock port S_AXI_ACLK to clk_50_0000MHz
+INFO:EDK - External IO port grouping doneINFO:EDK - Generate address successfully
+INFO:EDK - Successfully finished auto bus connection for IP instance: cpld_peri_ip_1
+Writing filter settings....
+Done writing filter settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.filters
+Done writing Tab View settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.gui
+Xilinx Platform Studio (XPS)
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+The project's MHS file has changed on disk.
+ERROR:EDK:4110 - IPNAME: logsys_axi_sp6_simpleio, INSTANCE: logsys_axi_sp6_simpleio_0 - cannot find MPD for the pcore 'logsys_axi_sp6_simpleio_v1_00_a' in any of the repositories - E:\Snake\XPS\system.mhs line 142 
+ERROR:EDK:4110 - IPNAME: logsys_axi_sp6_simpleio, INSTANCE: logsys_axi_sp6_simpleio_0 - cannot find MPD for the pcore 'logsys_axi_sp6_simpleio_v1_00_a' in any of the repositories - E:\Snake\XPS\system.mhs line 142 
+ERROR:EDK:4111 - IPNAME: logsys_axi_sp6_simpleio, INSTANCE: logsys_axi_sp6_simpleio_0 - cannot find MPD for the pcore - E:\Snake\XPS\system.mhs line 142 
+WARNING:UtilitiesC:159 - Message file "usenglish/_SSNAME.msg" wasn't found.
+Writing filter settings....
+Done writing filter settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.filters
+Done writing Tab View settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.gui
+Xilinx Platform Studio (XPS)
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Writing filter settings....
+Done writing filter settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.filters
+Done writing Tab View settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.gui
+Writing filter settings....
+Done writing filter settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.filters
+Done writing Tab View settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.gui
+Xilinx Platform Studio (XPS)
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Assigned Driver generic 1.00.a for instance lcd_ip_0
+lcd_ip_0 has been added to the project
+WARNING:EDK:2137 - Peripheral lcd_ip_0 is not accessible from any processor in the system. Check Bus Interface connections and address parameters. 
+Address Map for Processor microblaze_0
+  (0000000000-0x00003fff) microblaze_0_d_bram_ctrl	microblaze_0_dlmb
+  (0000000000-0x00003fff) microblaze_0_i_bram_ctrl	microblaze_0_ilmb
+  (0x40600000-0x4060ffff) axi_uartlite_0	axi4lite_0
+  (0x41400000-0x4140ffff) debug_module	axi4lite_0
+  (0x7f400000-0x7f40ffff) lcd_ip_0	axi4lite_0
+INFO:EDK - Use axi_uartlite_0 as reference
+INFO:EDK - Connect bus interface S_AXI to axi4lite_0
+INFO:EDK - Connect clock port S_AXI_ACLK to clk_50_0000MHz
+INFO:EDK - External IO port grouping doneINFO:EDK - Generate address successfully
+INFO:EDK - Successfully finished auto bus connection for IP instance: lcd_ip_0
+Assigned Driver generic 1.00.a for instance logsys_axi_sp6_simpleio_0
+logsys_axi_sp6_simpleio_0 has been added to the project
+WARNING:EDK:2137 - Peripheral logsys_axi_sp6_simpleio_0 is not accessible from any processor in the system. Check Bus Interface connections and address parameters. 
+Address Map for Processor microblaze_0
+  (0000000000-0x00003fff) microblaze_0_d_bram_ctrl	microblaze_0_dlmb
+  (0000000000-0x00003fff) microblaze_0_i_bram_ctrl	microblaze_0_ilmb
+  (0x40600000-0x4060ffff) axi_uartlite_0	axi4lite_0
+  (0x41400000-0x4140ffff) debug_module	axi4lite_0
+  (0x7a800000-0x7a80ffff) logsys_axi_sp6_simpleio_0	axi4lite_0
+  (0x7f400000-0x7f40ffff) lcd_ip_0	axi4lite_0
+INFO:EDK - Use axi_uartlite_0 as reference
+INFO:EDK - Connect bus interface S_AXI to axi4lite_0
+INFO:EDK - Connect clock port S_AXI_ACLK to clk_50_0000MHz
+INFO:EDK - External IO port grouping doneINFO:EDK - Generate address successfully
+INFO:EDK - Successfully finished auto bus connection for IP instance: logsys_axi_sp6_simpleio_0
+Overriding Xilinx file <TextEditor.cfg> with local file <C:/Xilinx/14.7/ISE_DS/EDK/data/TextEditor.cfg>
+Writing filter settings....
+Done writing filter settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.filters
+Done writing Tab View settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.gui
+Writing filter settings....
+Done writing filter settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.filters
+Done writing Tab View settings to:
+	\\vboxsrv\sharedfolder\Snake\XPS\etc\system.gui

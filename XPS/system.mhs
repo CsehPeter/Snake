@@ -16,6 +16,13 @@
  PORT CLK_N = CLK, DIR = I, DIFFERENTIAL_POLARITY = N, SIGIS = CLK, CLK_FREQ = 50000000
  PORT axi_uartlite_0_RX_pin = axi_uartlite_0_RX, DIR = I
  PORT axi_uartlite_0_TX_pin = axi_uartlite_0_TX, DIR = O
+ PORT logsys_axi_sp6_simpleio_0_cpld_jtagen_pin = logsys_axi_sp6_simpleio_0_cpld_jtagen, DIR = O
+ PORT logsys_axi_sp6_simpleio_0_cpld_rstn_pin = logsys_axi_sp6_simpleio_0_cpld_rstn, DIR = O
+ PORT logsys_axi_sp6_simpleio_0_cpld_clk_pin = logsys_axi_sp6_simpleio_0_cpld_clk, DIR = O
+ PORT logsys_axi_sp6_simpleio_0_cpld_load_pin = logsys_axi_sp6_simpleio_0_cpld_load, DIR = O
+ PORT logsys_axi_sp6_simpleio_0_cpld_mosi_pin = logsys_axi_sp6_simpleio_0_cpld_mosi, DIR = O
+ PORT logsys_axi_sp6_simpleio_0_cpld_miso_pin = logsys_axi_sp6_simpleio_0_cpld_miso, DIR = I
+ PORT logsys_axi_sp6_simpleio_0_gpio_IO_pin = logsys_axi_sp6_simpleio_0_gpio_IO, DIR = IO, VEC = [12:0]
 
 
 BEGIN proc_sys_reset
@@ -139,13 +146,28 @@ BEGIN axi_uartlite
  PORT TX = axi_uartlite_0_TX
 END
 
-BEGIN cpld_peri_ip
- PARAMETER INSTANCE = cpld_peri_ip_0
+BEGIN lcd_ip
+ PARAMETER INSTANCE = lcd_ip_0
  PARAMETER HW_VER = 1.00.a
- PARAMETER C_NUM_REG = 4
- PARAMETER C_BASEADDR = 0x7d000000
- PARAMETER C_HIGHADDR = 0x7d00ffff
+ PARAMETER C_BASEADDR = 0x7f400000
+ PARAMETER C_HIGHADDR = 0x7f40ffff
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT S_AXI_ACLK = clk_50_0000MHz
+END
+
+BEGIN logsys_axi_sp6_simpleio
+ PARAMETER INSTANCE = logsys_axi_sp6_simpleio_0
+ PARAMETER HW_VER = 1.00.a
+ PARAMETER C_BASEADDR = 0x7a800000
+ PARAMETER C_HIGHADDR = 0x7a80ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_50_0000MHz
+ PORT cpld_jtagen = logsys_axi_sp6_simpleio_0_cpld_jtagen
+ PORT cpld_rstn = logsys_axi_sp6_simpleio_0_cpld_rstn
+ PORT cpld_clk = logsys_axi_sp6_simpleio_0_cpld_clk
+ PORT cpld_load = logsys_axi_sp6_simpleio_0_cpld_load
+ PORT cpld_mosi = logsys_axi_sp6_simpleio_0_cpld_mosi
+ PORT cpld_miso = logsys_axi_sp6_simpleio_0_cpld_miso
+ PORT gpio_IO = logsys_axi_sp6_simpleio_0_gpio_IO
 END
 

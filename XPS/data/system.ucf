@@ -8,44 +8,44 @@
 CONFIG VCCAUX=3.3;
 
 # 50 MHz órajelgenerátor
-#NET clk50M LOC=P55 | IOSTANDARD=LVCMOS33 | TNM_NET=tnm_clk50M;
-#TIMESPEC TS_clk50M = PERIOD tnm_clk50M 50000 kHz;
+NET clk50M LOC=P55 | IOSTANDARD=LVCMOS33 | TNM_NET=tnm_clk50M;
+TIMESPEC TS_clk50M = PERIOD tnm_clk50M 50000 kHz;
 
 # Manuális RST nyomógomb (aktív alacsony)
-#NET rstbt  LOC=P67 | IOSTANDARD=LVCMOS33 | PULLUP | TIG;
+NET rstbt  LOC=P67 | IOSTANDARD=LVCMOS33 | PULLUP | TIG;
 
 
 # A LOGSYS fejlesztõi port vonalai.
-#NET dev_mosi       LOC=P104 | IOSTANDARD=LVCMOS33;
-#NET dev_miso       LOC=P144 | IOSTANDARD=LVCMOS33; 
+NET dev_mosi       LOC=P104 | IOSTANDARD=LVCMOS33;
+NET dev_miso       LOC=P144 | IOSTANDARD=LVCMOS33; 
 #NET dev_clk        LOC=P95  | IOSTANDARD=LVCMOS33; 
 #NET dev_rst        LOC=P94  | IOSTANDARD=LVCMOS33;
 
 
 # 3 darab aktív magas nyomógomb, balról jobbra számozva.
-#NET bt<2>          LOC=P61  | IOSTANDARD=LVCMOS33 | PULLDOWN;  
-#NET bt<1>          LOC=P62  | IOSTANDARD=LVCMOS33 | PULLDOWN;  
-#NET bt<0>          LOC=P66  | IOSTANDARD=LVCMOS33 | PULLDOWN;
+NET bt<2>          LOC=P61  | IOSTANDARD=LVCMOS33 | PULLDOWN;  
+NET bt<1>          LOC=P62  | IOSTANDARD=LVCMOS33 | PULLDOWN;  
+NET bt<0>          LOC=P66  | IOSTANDARD=LVCMOS33 | PULLDOWN;
 
 
 # A CPLD interfész vonalai. A cpld_jtagen jelet
 # mindig logikai alacsony szinttel hajtsuk meg!
-#NET cpld_jtagen    LOC=P82  | IOSTANDARD=LVCMOS33;
-#NET cpld_rstn      LOC=P74  | IOSTANDARD=LVCMOS33;
-#NET cpld_clk       LOC=P78  | IOSTANDARD=LVCMOS33;
-#NET cpld_load      LOC=P80  | IOSTANDARD=LVCMOS33;
-#NET cpld_mosi      LOC=P81  | IOSTANDARD=LVCMOS33;
-#NET cpld_miso      LOC=P79  | IOSTANDARD=LVCMOS33;
+NET cpld_jtagen    LOC=P82  | IOSTANDARD=LVCMOS33;
+NET cpld_rstn      LOC=P74  | IOSTANDARD=LVCMOS33;
+NET cpld_clk       LOC=P78  | IOSTANDARD=LVCMOS33;
+NET cpld_load      LOC=P80  | IOSTANDARD=LVCMOS33;
+NET cpld_mosi      LOC=P81  | IOSTANDARD=LVCMOS33;
+NET cpld_miso      LOC=P79  | IOSTANDARD=LVCMOS33;
 
 
 # Az SPI interfész vonalai. A nem használt SPI perifériák
 # kiválasztó jeleit logikai magas szinttel hajtsuk meg!
-#NET spi_sdcard_csn LOC=P75  | IOSTANDARD=LVCMOS33;
-#NET spi_flash_csn  LOC=P38  | IOSTANDARD=LVCMOS33;
-#NET spi_lcd_csn    LOC=P69  | IOSTANDARD=LVCMOS33;
-#NET spi_mosi       LOC=P64  | IOSTANDARD=LVCMOS33;
-#NET spi_miso       LOC=P65  | IOSTANDARD=LVCMOS33;
-#NET spi_clk        LOC=P70  | IOSTANDARD=LVCMOS33;
+NET spi_sdcard_csn LOC=P75  | IOSTANDARD=LVCMOS33;
+NET spi_flash_csn  LOC=P38  | IOSTANDARD=LVCMOS33;
+NET spi_lcd_csn    LOC=P69  | IOSTANDARD=LVCMOS33;
+NET spi_mosi       LOC=P64  | IOSTANDARD=LVCMOS33;
+NET spi_miso       LOC=P65  | IOSTANDARD=LVCMOS33;
+NET spi_clk        LOC=P70  | IOSTANDARD=LVCMOS33;
 
 
 # SRAM és SDRAM memóriák. A nem használt memóriák
@@ -90,12 +90,12 @@ CONFIG VCCAUX=3.3;
 #NET mem_lbn        LOC=P27  | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
 #NET mem_ubn        LOC=P26  | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
 
-#NET sram_csn       LOC=P1   | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
+NET sram_csn       LOC=P1   | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
 #NET sram_oen       LOC=P2   | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
 
 #NET sdram_clk      LOC=P30  | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
 #NET sdram_cke      LOC=P32  | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
-#NET sdram_csn      LOC=P35  | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
+NET sdram_csn      LOC=P35  | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;
 
 
 # LOGSYS "A" bõvítõcsatlakozó (szembõl nézve a 20 pólusú
