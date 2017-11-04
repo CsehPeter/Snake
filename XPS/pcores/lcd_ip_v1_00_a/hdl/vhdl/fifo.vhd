@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------
 -- Company: 	BME
--- Engineer: 	Cseh Péter (DM5HMB), Limbay Bence (E2JT1E)
+-- Engineer: 	Cseh PÃ©ter (DM5HMB), Limbay Bence (E2JT1E)
 -- 
 -- Create Date: 2017.10.29
 -- Design Name: lcd
@@ -32,9 +32,7 @@ port
 	wr : in std_logic;
 
 	empty : out std_logic;
-	full : out std_logic;
-
-	count : out std_logic_vector(5 downto 0) --TODO: log2(DEPTH)
+	full : out std_logic
 );
 end fifo;
 
@@ -48,14 +46,10 @@ signal cnt : integer range 0 to DEPTH := 0;
 signal rd_pt : integer range 0 to (DEPTH - 1) := 0;
 signal wr_pt : integer range 0 to (DEPTH - 1) := 0;
 
---type fifo_fsm_type is (IDLE, R, W, RW);
---signal fsm : fifo_fsm_type := IDLE;
 signal op : std_logic_vector(1 downto 0);
 
 begin
 
-count <= std_logic_vector(to_unsigned(cnt, 6)); --TODO: log2(DEPTH)
-op <= wr & rd;
 
 proc_fifo : process(clk)
 begin
@@ -69,10 +63,8 @@ begin
 			wr_pt <= 0;
 			cnt <= 0;
 		else
-			case (op) is
-
 				--ONLY READ
-				when "01" => 
+				if(rd = '1' and wr = '0') then
 
 					if(cnt = 1) then --EMPTY
 						empty <= '1';
@@ -91,9 +83,11 @@ begin
 					end if;
 
 					dout <= mem(rd_pt); --READ DATA
+					
+                end if;
 	
 				--ONLY WRITE
-				when "10" =>
+				if(wr = '1' and rd = '0') then
 
 					if(cnt = (DEPTH - 1)) then --FULL
 						full <= '1';
@@ -112,26 +106,28 @@ begin
 
 						mem(wr_pt) <= din;	--WRITE DATA
 					end if;
+                end if;
 
 				--BOTH READ AND WRITE
-				when "11" => 
+				if(wr = '1' and rd = '1') then
 
-				mem(wr_pt) <= din;	--WRITE DATA
-				dout <= mem(rd_pt);	--READ DATA
+					mem(wr_pt) <= din;	--WRITE DATA
+					dout <= mem(rd_pt);	--READ DATA
 
-				if(rd_pt = (DEPTH - 1)) then --READ POINTER
-					rd_pt <= 0;
-				else
-					rd_pt <= rd_pt + 1;	
-				end if;
+					if(rd_pt = (DEPTH - 1)) then --READ POINTER
+						rd_pt <= 0;
+					else
+						rd_pt <= rd_pt + 1;	
+					end if;
 
-				if(wr_pt = (DEPTH - 1)) then --WRITE POINTER
-					wr_pt <= 0;
-				else
-					wr_pt <= wr_pt + 1;
-				end if;
+					if(wr_pt = (DEPTH - 1)) then --WRITE POINTER
+						wr_pt <= 0;
+					else
+						wr_pt <= wr_pt + 1;
+					end if;
+					
+                end if;
 
-			end case;
 		end if;
 	end if;
 end process proc_fifo;

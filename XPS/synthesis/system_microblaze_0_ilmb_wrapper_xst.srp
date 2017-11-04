@@ -1,6 +1,6 @@
 Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to E:\Snake\XPS\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to E:\MB_System\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "system_microblaze_0_ilmb_wrapper_xst.prj"
-Verilog Include Directory          : {"E:\Snake\XPS\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"E:\MB_System\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx9tqg144-2
@@ -65,7 +65,7 @@ Cores Search Directories           : {../implementation}
 Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_v10_v2_00_b/hdl/vhdl/lmb_v10.vhd" into library lmb_v10_v2_00_b
 Parsing entity <lmb_v10>.
 Parsing architecture <IMP> of entity <lmb_v10>.
-Parsing VHDL file "\\vboxsrv\sharedfolder\Snake\XPS\hdl\system_microblaze_0_ilmb_wrapper.vhd" into library work
+Parsing VHDL file "\\vboxsrv\sharedfolder\MB_System\hdl\system_microblaze_0_ilmb_wrapper.vhd" into library work
 Parsing entity <system_microblaze_0_ilmb_wrapper>.
 Parsing architecture <STRUCTURE> of entity <system_microblaze_0_ilmb_wrapper>.
 
@@ -83,7 +83,7 @@ WARNING:HDLCompiler:89 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcor
 =========================================================================
 
 Synthesizing Unit <system_microblaze_0_ilmb_wrapper>.
-    Related source file is "\\vboxsrv\sharedfolder\Snake\XPS\hdl\system_microblaze_0_ilmb_wrapper.vhd".
+    Related source file is "\\vboxsrv\sharedfolder\MB_System\hdl\system_microblaze_0_ilmb_wrapper.vhd".
     Summary:
 	no macro.
 Unit <system_microblaze_0_ilmb_wrapper> synthesized.
@@ -286,8 +286,8 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.57 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.61 secs
  
 --> 
 

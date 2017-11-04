@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to E:\Snake\XPS\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to E:\MB_System\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 TABLE OF CONTENTS
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "system_proc_sys_reset_0_wrapper_xst.prj"
-Verilog Include Directory          : {"E:\Snake\XPS\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"E:\MB_System\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx9tqg144-2
@@ -74,7 +74,7 @@ Parsing architecture <imp> of entity <sequence>.
 Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/proc_sys_reset.vhd" into library proc_sys_reset_v3_00_a
 Parsing entity <proc_sys_reset>.
 Parsing architecture <imp> of entity <proc_sys_reset>.
-Parsing VHDL file "\\vboxsrv\sharedfolder\Snake\XPS\hdl\system_proc_sys_reset_0_wrapper.vhd" into library work
+Parsing VHDL file "\\vboxsrv\sharedfolder\MB_System\hdl\system_proc_sys_reset_0_wrapper.vhd" into library work
 Parsing entity <system_proc_sys_reset_0_wrapper>.
 Parsing architecture <STRUCTURE> of entity <system_proc_sys_reset_0_wrapper>.
 
@@ -100,7 +100,7 @@ Elaborating entity <upcnt_n> (architecture <imp>) with generics from library <pr
 =========================================================================
 
 Synthesizing Unit <system_proc_sys_reset_0_wrapper>.
-    Related source file is "\\vboxsrv\sharedfolder\Snake\XPS\hdl\system_proc_sys_reset_0_wrapper.vhd".
+    Related source file is "\\vboxsrv\sharedfolder\MB_System\hdl\system_proc_sys_reset_0_wrapper.vhd".
     Summary:
 	no macro.
 Unit <system_proc_sys_reset_0_wrapper> synthesized.
@@ -476,8 +476,8 @@ Slowest_sync_clk|    3.120|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.96 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.98 secs
  
 --> 
 

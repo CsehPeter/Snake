@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Tue Oct 10 21:18:50 2017">
+  <application stringID="Xst" timeStamp="Tue Oct 31 00:20:32 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -65,7 +65,7 @@
       <item DEFAULT="/" stringID="XST_HIERARCHYSEPARATOR" value="/"/>
       <item DEFAULT="Yes" label="-iobuf" stringID="XST_IOBUF" value="NO"/>
       <item DEFAULT="" label="-sd" stringID="XST_SD" value="{../implementation}"/>
-      <item DEFAULT="" label="-vlgincdir" stringID="XST_VLGINCDIR" value="{&quot;E:\Snake\XPS\pcores\&quot; &quot;C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\&quot; &quot;C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\&quot; }"/>
+      <item DEFAULT="" label="-vlgincdir" stringID="XST_VLGINCDIR" value="{&quot;E:\MB_System\pcores\&quot; &quot;C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\&quot; &quot;C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\&quot; }"/>
     </section>
     <section stringID="XST_ADVANCED_HDL_SYNTHESIS_REPORTFOUND_NO_MACRO"/>
     <section stringID="XST_FINAL_REGISTER_REPORTFOUND_NO_MACRO"/>
@@ -82,8 +82,8 @@
         <item dataType="int" stringID="XST_BELS" value="1">
           <item dataType="int" stringID="XST_GND" value="1"/>
         </item>
-        <item dataType="int" stringID="XST_RAMS" value="8">
-          <item dataType="int" stringID="XST_RAMB16BWER" value="8"/>
+        <item dataType="int" stringID="XST_RAMS" value="16">
+          <item dataType="int" stringID="XST_RAMB16BWER" value="16"/>
         </item>
       </section>
     </section>
@@ -96,8 +96,8 @@
       <item dataType="int" label="Number of unique control sets" stringID="XST_NUMBER_OF_UNIQUE_CONTROL_SETS" value="0"/>
       <item dataType="int" label="Number of IOs" stringID="XST_NUMBER_OF_IOS" value="206"/>
       <item AVAILABLE="102" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="0"/>
-      <item AVAILABLE="32" dataType="int" label="Number of Block RAM/FIFO" stringID="XST_NUMBER_OF_BLOCK_RAMFIFO" value="8"/>
-      <item dataType="int" label="Number using Block RAM only" stringID="XST_NUMBER_USING_BLOCK_RAM_ONLY" value="8"/>
+      <item AVAILABLE="32" dataType="int" label="Number of Block RAM/FIFO" stringID="XST_NUMBER_OF_BLOCK_RAMFIFO" value="16"/>
+      <item dataType="int" label="Number using Block RAM only" stringID="XST_NUMBER_USING_BLOCK_RAM_ONLY" value="16"/>
     </section>
     <section stringID="XST_PARTITION_RESOURCE_SUMMARY">
       <section stringID="XST_NO_PARTITIONS_WERE_FOUND_IN_THIS_DESIGN"/>
@@ -105,7 +105,7 @@
     <section stringID="XST_ERRORS_STATISTICS">
       <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_ERRORS" value="0"/>
       <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="5"/>
-      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_INFOS" value="17"/>
+      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_INFOS" value="33"/>
     </section>
   </application>
 

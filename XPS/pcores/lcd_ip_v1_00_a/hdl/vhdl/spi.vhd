@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------
 -- Company: 	BME
--- Engineer: 	Cseh PÃ©ter (DM5HMB), Limbay Bence (E2JT1E)
+-- Engineer: 	Cseh Peter (DM5HMB), Limbay Bence (E2JT1E)
 -- 
 -- Create Date: 2017.10.29
 -- Design Name: lcd

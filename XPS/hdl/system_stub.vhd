@@ -9,11 +9,25 @@ use UNISIM.VCOMPONENTS.ALL;
 
 entity system_stub is
   port (
-    RESET : in std_logic;
-    CLK_P : in std_logic;
-    CLK_N : in std_logic;
-    axi_uartlite_0_RX_pin : in std_logic;
-    axi_uartlite_0_TX_pin : out std_logic
+    dev_miso : out std_logic;
+    dev_mosi : in std_logic;
+    rstbt : in std_logic;
+    clk50M : in std_logic;
+    cpld_jtagen : out std_logic;
+    cpld_rstn : out std_logic;
+    cpld_clk : out std_logic;
+    cpld_load : out std_logic;
+    cpld_mosi : out std_logic;
+    cpld_miso : in std_logic;
+    bt : in std_logic_vector(2 downto 0);
+    sram_csn : out std_logic;
+    sdram_csn : out std_logic;
+    spi_sdcard_csn : out std_logic;
+    spi_flash_csn : out std_logic;
+    spi_lcd_csn : out std_logic;
+    spi_clk : out std_logic;
+    spi_mosi : out std_logic;
+    spi_miso : out std_logic
   );
 end system_stub;
 
@@ -21,11 +35,25 @@ architecture STRUCTURE of system_stub is
 
   component system is
     port (
-      RESET : in std_logic;
-      CLK_P : in std_logic;
-      CLK_N : in std_logic;
-      axi_uartlite_0_RX_pin : in std_logic;
-      axi_uartlite_0_TX_pin : out std_logic
+      dev_miso : out std_logic;
+      dev_mosi : in std_logic;
+      rstbt : in std_logic;
+      clk50M : in std_logic;
+      cpld_jtagen : out std_logic;
+      cpld_rstn : out std_logic;
+      cpld_clk : out std_logic;
+      cpld_load : out std_logic;
+      cpld_mosi : out std_logic;
+      cpld_miso : in std_logic;
+      bt : in std_logic_vector(2 downto 0);
+      sram_csn : out std_logic;
+      sdram_csn : out std_logic;
+      spi_sdcard_csn : out std_logic;
+      spi_flash_csn : out std_logic;
+      spi_lcd_csn : out std_logic;
+      spi_clk : out std_logic;
+      spi_mosi : out std_logic;
+      spi_miso : out std_logic
     );
   end component;
 
@@ -36,11 +64,25 @@ begin
 
   system_i : system
     port map (
-      RESET => RESET,
-      CLK_P => CLK_P,
-      CLK_N => CLK_N,
-      axi_uartlite_0_RX_pin => axi_uartlite_0_RX_pin,
-      axi_uartlite_0_TX_pin => axi_uartlite_0_TX_pin
+      dev_miso => dev_miso,
+      dev_mosi => dev_mosi,
+      rstbt => rstbt,
+      clk50M => clk50M,
+      cpld_jtagen => cpld_jtagen,
+      cpld_rstn => cpld_rstn,
+      cpld_clk => cpld_clk,
+      cpld_load => cpld_load,
+      cpld_mosi => cpld_mosi,
+      cpld_miso => cpld_miso,
+      bt => bt,
+      sram_csn => sram_csn,
+      sdram_csn => sdram_csn,
+      spi_sdcard_csn => spi_sdcard_csn,
+      spi_flash_csn => spi_flash_csn,
+      spi_lcd_csn => spi_lcd_csn,
+      spi_clk => spi_clk,
+      spi_mosi => spi_mosi,
+      spi_miso => spi_miso
     );
 
 end architecture STRUCTURE;

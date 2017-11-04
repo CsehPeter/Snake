@@ -296,9 +296,9 @@ begin
   microblaze_0_d_bram_ctrl : lmb_bram_if_cntlr
     generic map (
       C_BASEADDR => X"00000000",
-      C_HIGHADDR => X"00003fff",
+      C_HIGHADDR => X"00007fff",
       C_FAMILY => "spartan6",
-      C_MASK => X"00400000",
+      C_MASK => X"40000000",
       C_MASK1 => X"00800000",
       C_MASK2 => X"00800000",
       C_MASK3 => X"00800000",

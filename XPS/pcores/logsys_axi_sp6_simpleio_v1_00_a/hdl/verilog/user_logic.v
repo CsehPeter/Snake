@@ -84,7 +84,7 @@ assign cpld_jtagen = 1'b0;
 //* LED register (BASE+0x00, 8 bit, RW).                                       *
 //******************************************************************************
 reg  [7:0] led_reg;
-wire       led_reg_wr = Bus2IP_WrCE[3] & &Bus2IP_BE);
+wire       led_reg_wr = Bus2IP_WrCE[3] & (Bus2IP_BE == 4'b0001);
 
 always @(posedge clk)
 begin
@@ -100,7 +100,7 @@ end
 //* DISP1 register (BASE+0x01, 8 bit, RW).                                     *
 //******************************************************************************
 reg  [7:0] disp1_reg;
-wire       disp1_reg_wr = Bus2IP_WrCE[3] & &Bus2IP_BE);
+wire       disp1_reg_wr = Bus2IP_WrCE[3] & (Bus2IP_BE == 4'b0010);
 
 always @(posedge clk)
 begin
@@ -116,7 +116,7 @@ end
 //* DISP2 register (BASE+0x02, 8 bit, RW).                                     *
 //******************************************************************************
 reg  [7:0] disp2_reg;
-wire       disp2_reg_wr = Bus2IP_WrCE[3] & &Bus2IP_BE);
+wire       disp2_reg_wr = Bus2IP_WrCE[3] & (Bus2IP_BE == 4'b0100);
 
 always @(posedge clk)
 begin
@@ -141,7 +141,7 @@ generate
       (* iob = "true" *)
       reg  [C_GPIO_WIDTH-1:0] gpio_O_reg;
       reg  [C_GPIO_WIDTH-1:0] gpio_dout_reg;
-      wire                    gpio_dout_reg_wr = Bus2IP_WrCE[2] & &Bus2IP_BE);
+      wire                    gpio_dout_reg_wr = Bus2IP_WrCE[2] & (Bus2IP_BE == 4'b0011);
 
       always @(posedge clk)
       begin
@@ -197,7 +197,7 @@ generate
       (* iob = "true" *)
       reg  [C_GPIO_WIDTH-1:0] gpio_T_reg;
       reg  [C_GPIO_WIDTH-1:0] gpio_dir_reg;
-      wire                    gpio_dir_reg_wr = Bus2IP_WrCE[1] & &Bus2IP_BE);
+      wire                    gpio_dir_reg_wr = Bus2IP_WrCE[1] & (Bus2IP_BE == 4'b0011);
 
       always @(posedge clk)
       begin
@@ -240,7 +240,7 @@ endgenerate
 //* Interrupt enable register (BASE+0x0C, 8 bit, RW).                          *
 //******************************************************************************
 reg  [3:0] ie_reg;
-wire       ie_reg_wr   = Bus2IP_WrCE[0] & &Bus2IP_BE);
+wire       ie_reg_wr   = Bus2IP_WrCE[0] & (Bus2IP_BE == 4'b0001);
 wire [7:0] ie_reg_dout = {4'b0000, ie_reg};
 
 always @(posedge clk)
@@ -259,7 +259,7 @@ end
 //Interrupt flag register.
 reg  [3:0] if_reg;
 wire [3:0] if_set;
-wire       if_reg_wr   = Bus2IP_WrCE[0] & &Bus2IP_BE);
+wire       if_reg_wr   = Bus2IP_WrCE[0] & (Bus2IP_BE == 4'b0010);
 wire [7:0] if_reg_dout = {4'b0000, if_reg};
 
 integer i;

@@ -6,7 +6,7 @@ xc6slx9tqg144-2 -intstyle silent -i -sd .. system_microblaze_0_dlmb_wrapper.ngc
 ../system_microblaze_0_dlmb_wrapper
 
 Reading NGO file
-"E:/Snake/XPS/implementation/microblaze_0_dlmb_wrapper/system_microblaze_0_dlmb_
+"E:/MB_System/implementation/microblaze_0_dlmb_wrapper/system_microblaze_0_dlmb_
 wrapper.ngc" ...
 
 Partition Implementation Status

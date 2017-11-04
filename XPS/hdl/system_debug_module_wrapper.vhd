@@ -752,7 +752,7 @@ begin
       C_SPLB_NATIVE_DWIDTH => 32,
       C_SPLB_SUPPORT_BURSTS => 0,
       C_MB_DBG_PORTS => 1,
-      C_USE_UART => 1,
+      C_USE_UART => 0,
       C_USE_BSCAN => 0,
       C_S_AXI_ADDR_WIDTH => 32,
       C_S_AXI_DATA_WIDTH => 32
