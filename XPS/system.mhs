@@ -25,10 +25,10 @@
  PORT sram_csn = net_vcc, DIR = O, SIGIS = NONE
  PORT sdram_csn = net_vcc, DIR = O, SIGIS = NONE
  PORT spi_sdcard_csn = lcd_ip_0_sdcard_csn, DIR = O
- PORT spi_flash_csn = lcd_ip_0_flash_csn, DIR = O
  PORT spi_lcd_csn = lcd_ip_0_lcd_csn, DIR = O
- PORT spi_clk = lcd_ip_0_sck, DIR = O
  PORT spi_mosi = lcd_ip_0_mosi, DIR = O
+ PORT spi_clk = lcd_ip_0_sck, DIR = O
+ PORT spi_flash_csn = lcd_ip_0_flash_csn, DIR = O
  PORT spi_miso = lcd_ip_0_miso, DIR = O
 
 
@@ -48,8 +48,8 @@ END
 BEGIN axi_intc
  PARAMETER INSTANCE = microblaze_0_intc
  PARAMETER HW_VER = 1.04.a
- PARAMETER C_BASEADDR = 0x41200000
- PARAMETER C_HIGHADDR = 0x4120ffff
+ PARAMETER C_BASEADDR = 0x40000000
+ PARAMETER C_HIGHADDR = 0x4000FFFF
  BUS_INTERFACE S_AXI = axi4lite_0
  BUS_INTERFACE INTERRUPT = microblaze_0_interrupt
  PORT S_AXI_ACLK = clk_50_0000MHz
@@ -124,8 +124,8 @@ BEGIN logsys_axi_sp6_simpleio
  PARAMETER INSTANCE = logsys_axi_sp6_simpleio_0
  PARAMETER HW_VER = 1.00.a
  PARAMETER C_GPIO_ENABLE = 0
- PARAMETER C_BASEADDR = 0x60000000
- PARAMETER C_HIGHADDR = 0x6000FFFF
+ PARAMETER C_BASEADDR = 0x43000000
+ PARAMETER C_HIGHADDR = 0x4300FFFF
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT S_AXI_ACLK = clk_50_0000MHz
  PORT cpld_jtagen = logsys_axi_sp6_simpleio_0_cpld_jtagen
@@ -141,16 +141,15 @@ END
 BEGIN lcd_ip
  PARAMETER INSTANCE = lcd_ip_0
  PARAMETER HW_VER = 1.00.a
- PARAMETER C_NUM_REG = 2
- PARAMETER C_BASEADDR = 0x70000000
- PARAMETER C_HIGHADDR = 0x7000FFFF
+ PARAMETER C_BASEADDR = 0x50000000
+ PARAMETER C_HIGHADDR = 0x5000FFFF
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT S_AXI_ACLK = clk_50_0000MHz
  PORT sdcard_csn = lcd_ip_0_sdcard_csn
- PORT flash_csn = lcd_ip_0_flash_csn
  PORT lcd_csn = lcd_ip_0_lcd_csn
- PORT sck = lcd_ip_0_sck
  PORT mosi = lcd_ip_0_mosi
+ PORT sck = lcd_ip_0_sck
+ PORT flash_csn = lcd_ip_0_flash_csn
  PORT miso = lcd_ip_0_miso
 END
 
@@ -184,8 +183,8 @@ BEGIN axi_timer
  PARAMETER HW_VER = 1.03.a
  PARAMETER C_COUNT_WIDTH = 32
  PARAMETER C_ONE_TIMER_ONLY = 0
- PARAMETER C_BASEADDR = 0x41c00000
- PARAMETER C_HIGHADDR = 0x41c0ffff
+ PARAMETER C_BASEADDR = 0x41000000
+ PARAMETER C_HIGHADDR = 0x4100FFFF
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT S_AXI_ACLK = clk_50_0000MHz
  PORT Interrupt = axi_timer_0_Interrupt
@@ -206,8 +205,8 @@ BEGIN axi_uartlite
  PARAMETER C_DATA_BITS = 8
  PARAMETER C_USE_PARITY = 0
  PARAMETER C_ODD_PARITY = 1
- PARAMETER C_BASEADDR = 0x40600000
- PARAMETER C_HIGHADDR = 0x4060ffff
+ PARAMETER C_BASEADDR = 0x42000000
+ PARAMETER C_HIGHADDR = 0x4200FFFF
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT S_AXI_ACLK = clk_50_0000MHz
  PORT TX = RS232_Uart_1_sout

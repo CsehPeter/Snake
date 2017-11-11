@@ -119,6 +119,6 @@ vhdl proc_common_v3_00_a C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcore
 vhdl axi_lite_ipif_v1_01_a C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd
 vhdl axi_lite_ipif_v1_01_a C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd
 vhdl axi_lite_ipif_v1_01_a C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd
-verilog logsys_axi_sp6_simpleio_v1_00_a \\vboxsrv\sharedfolder\MB_System\pcores\logsys_axi_sp6_simpleio_v1_00_a/hdl/verilog/user_logic.v
-vhdl logsys_axi_sp6_simpleio_v1_00_a \\vboxsrv\sharedfolder\MB_System\pcores\logsys_axi_sp6_simpleio_v1_00_a/hdl/vhdl/logsys_axi_sp6_simpleio.vhd
+verilog logsys_axi_sp6_simpleio_v1_00_a \\vboxsrv\sharedfolder\Snake\XPS\pcores\logsys_axi_sp6_simpleio_v1_00_a/hdl/verilog/user_logic.v
+vhdl logsys_axi_sp6_simpleio_v1_00_a \\vboxsrv\sharedfolder\Snake\XPS\pcores\logsys_axi_sp6_simpleio_v1_00_a/hdl/vhdl/logsys_axi_sp6_simpleio.vhd
 vhdl work ../hdl/system_logsys_axi_sp6_simpleio_0_wrapper.vhd

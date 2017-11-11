@@ -119,9 +119,9 @@ vhdl proc_common_v3_00_a C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcore
 vhdl axi_lite_ipif_v1_01_a C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd
 vhdl axi_lite_ipif_v1_01_a C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd
 vhdl axi_lite_ipif_v1_01_a C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd
-vhdl lcd_ip_v1_00_a \\vboxsrv\sharedfolder\MB_System\pcores\lcd_ip_v1_00_a/hdl/vhdl/spi.vhd
-vhdl lcd_ip_v1_00_a \\vboxsrv\sharedfolder\MB_System\pcores\lcd_ip_v1_00_a/hdl/vhdl/fifo.vhd
-vhdl lcd_ip_v1_00_a \\vboxsrv\sharedfolder\MB_System\pcores\lcd_ip_v1_00_a/hdl/vhdl/bus_if.vhd
-verilog lcd_ip_v1_00_a \\vboxsrv\sharedfolder\MB_System\pcores\lcd_ip_v1_00_a/hdl/verilog/user_logic.v
-vhdl lcd_ip_v1_00_a \\vboxsrv\sharedfolder\MB_System\pcores\lcd_ip_v1_00_a/hdl/vhdl/lcd_ip.vhd
+vhdl lcd_ip_v1_00_a \\vboxsrv\sharedfolder\Snake\XPS\pcores\lcd_ip_v1_00_a/hdl/vhdl/spi.vhd
+vhdl lcd_ip_v1_00_a \\vboxsrv\sharedfolder\Snake\XPS\pcores\lcd_ip_v1_00_a/hdl/vhdl/fifo.vhd
+vhdl lcd_ip_v1_00_a \\vboxsrv\sharedfolder\Snake\XPS\pcores\lcd_ip_v1_00_a/hdl/vhdl/bus_if.vhd
+verilog lcd_ip_v1_00_a \\vboxsrv\sharedfolder\Snake\XPS\pcores\lcd_ip_v1_00_a/hdl/verilog/user_logic.v
+vhdl lcd_ip_v1_00_a \\vboxsrv\sharedfolder\Snake\XPS\pcores\lcd_ip_v1_00_a/hdl/vhdl/lcd_ip.vhd
 vhdl work ../hdl/system_lcd_ip_0_wrapper.vhd

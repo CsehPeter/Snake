@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to E:\MB_System\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to E:\Snake\XPS\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 TABLE OF CONTENTS
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "system_microblaze_0_intc_wrapper_xst.prj"
-Verilog Include Directory          : {"E:\MB_System\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"E:\Snake\XPS\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx9tqg144-2
@@ -445,7 +445,7 @@ Parsing architecture <imp> of entity <intc_core>.
 Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_intc_v1_04_a/hdl/vhdl/axi_intc.vhd" into library axi_intc_v1_04_a
 Parsing entity <axi_intc>.
 Parsing architecture <imp> of entity <axi_intc>.
-Parsing VHDL file "\\vboxsrv\sharedfolder\MB_System\hdl\system_microblaze_0_intc_wrapper.vhd" into library work
+Parsing VHDL file "\\vboxsrv\sharedfolder\Snake\XPS\hdl\system_microblaze_0_intc_wrapper.vhd" into library work
 Parsing entity <system_microblaze_0_intc_wrapper>.
 Parsing architecture <STRUCTURE> of entity <system_microblaze_0_intc_wrapper>.
 
@@ -508,7 +508,7 @@ INFO:HDLCompiler:679 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores
 =========================================================================
 
 Synthesizing Unit <system_microblaze_0_intc_wrapper>.
-    Related source file is "\\vboxsrv\sharedfolder\MB_System\hdl\system_microblaze_0_intc_wrapper.vhd".
+    Related source file is "\\vboxsrv\sharedfolder\Snake\XPS\hdl\system_microblaze_0_intc_wrapper.vhd".
     Summary:
 	no macro.
 Unit <system_microblaze_0_intc_wrapper> synthesized.
@@ -1206,7 +1206,7 @@ S_AXI_ACLK     |    4.217|         |         |         |
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.14 secs
+Total CPU time to Xst completion: 6.32 secs
  
 --> 
 

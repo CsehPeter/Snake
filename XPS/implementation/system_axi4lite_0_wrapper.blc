@@ -6,7 +6,7 @@ xc6slx9tqg144-2 -intstyle silent -i -sd .. system_axi4lite_0_wrapper.ngc
 ../system_axi4lite_0_wrapper
 
 Reading NGO file
-"E:/MB_System/implementation/axi4lite_0_wrapper/system_axi4lite_0_wrapper.ngc"
+"E:/Snake/XPS/implementation/axi4lite_0_wrapper/system_axi4lite_0_wrapper.ngc"
 ...
 
 Partition Implementation Status

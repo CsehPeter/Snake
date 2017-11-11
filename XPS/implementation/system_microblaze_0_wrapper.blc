@@ -6,7 +6,7 @@ xc6slx9tqg144-2 -intstyle silent -i -sd .. system_microblaze_0_wrapper.ngc
 ../system_microblaze_0_wrapper
 
 Reading NGO file
-"E:/MB_System/implementation/microblaze_0_wrapper/system_microblaze_0_wrapper.ng
+"E:/Snake/XPS/implementation/microblaze_0_wrapper/system_microblaze_0_wrapper.ng
 c" ...
 
 Partition Implementation Status

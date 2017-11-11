@@ -6,7 +6,7 @@ xc6slx9tqg144-2 -intstyle silent -i -sd .. system_clock_generator_0_wrapper.ngc
 ../system_clock_generator_0_wrapper
 
 Reading NGO file
-"E:/MB_System/implementation/clock_generator_0_wrapper/system_clock_generator_0_
+"E:/Snake/XPS/implementation/clock_generator_0_wrapper/system_clock_generator_0_
 wrapper.ngc" ...
 
 Partition Implementation Status

@@ -95,10 +95,10 @@ begin
       C_S_AXI_MIN_SIZE => X"000001ff",
       C_USE_WSTRB => 0,
       C_DPHASE_TIMEOUT => 8,
-      C_BASEADDR => X"70000000",
-      C_HIGHADDR => X"7000FFFF",
+      C_BASEADDR => X"50000000",
+      C_HIGHADDR => X"5000FFFF",
       C_FAMILY => "spartan6",
-      C_NUM_REG => 2,
+      C_NUM_REG => 1,
       C_NUM_MEM => 1,
       C_SLV_AWIDTH => 32,
       C_SLV_DWIDTH => 32

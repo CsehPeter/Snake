@@ -1,16 +1,13 @@
 Release 14.7 - par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Nov 03 22:12:18 2017
+Sat Nov 11 17:45:23 2017
 
 All signals are completely routed.
 
-WARNING:ParHelpers:361 - There are 21 loadless signals in this design. This design will cause Bitgen to issue DRC
+WARNING:ParHelpers:361 - There are 18 loadless signals in this design. This design will cause Bitgen to issue DRC
    warnings.
 
-   lcd_ip_0/lcd_ip_0/USER_LOGIC_I/fifo_inst/Mram_mem1_RAMD_O
-   lcd_ip_0/lcd_ip_0/USER_LOGIC_I/fifo_inst/Mram_mem2_RAMD_O
-   lcd_ip_0/lcd_ip_0/USER_LOGIC_I/fifo_inst/Mram_mem3_RAMD_O
    microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Data_Flow_I/Register_File_I/Using_LUT6.All_RAM32M[0].ram32m_i_RAMD_D1_O
    microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Data_Flow_I/Register_File_I/Using_LUT6.All_RAM32M[10].ram32m_i_RAMD_D1_O
    microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Data_Flow_I/Register_File_I/Using_LUT6.All_RAM32M[11].ram32m_i_RAMD_D1_O

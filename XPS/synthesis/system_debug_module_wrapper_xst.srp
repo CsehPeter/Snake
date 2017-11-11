@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to E:\MB_System\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to E:\Snake\XPS\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 TABLE OF CONTENTS
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "system_debug_module_wrapper_xst.prj"
-Verilog Include Directory          : {"E:\MB_System\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"E:\Snake\XPS\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx9tqg144-2
@@ -273,7 +273,7 @@ Parsing architecture <IMP> of entity <mdm_core>.
 Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/mdm_v2_10_a/hdl/vhdl/mdm.vhd" into library mdm_v2_10_a
 Parsing entity <MDM>.
 Parsing architecture <IMP> of entity <mdm>.
-Parsing VHDL file "\\vboxsrv\sharedfolder\MB_System\hdl\system_debug_module_wrapper.vhd" into library work
+Parsing VHDL file "\\vboxsrv\sharedfolder\Snake\XPS\hdl\system_debug_module_wrapper.vhd" into library work
 Parsing entity <system_debug_module_wrapper>.
 Parsing architecture <STRUCTURE> of entity <system_debug_module_wrapper>.
 
@@ -302,7 +302,7 @@ WARNING:HDLCompiler:634 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pco
 =========================================================================
 
 Synthesizing Unit <system_debug_module_wrapper>.
-    Related source file is "\\vboxsrv\sharedfolder\MB_System\hdl\system_debug_module_wrapper.vhd".
+    Related source file is "\\vboxsrv\sharedfolder\Snake\XPS\hdl\system_debug_module_wrapper.vhd".
     Summary:
 	no macro.
 Unit <system_debug_module_wrapper> synthesized.
@@ -763,8 +763,8 @@ debug_module/update|         |    4.047|   10.248|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.33 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.33 secs
  
 --> 
 

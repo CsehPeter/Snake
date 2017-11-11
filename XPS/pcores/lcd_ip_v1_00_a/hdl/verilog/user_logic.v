@@ -16,7 +16,7 @@ module user_logic #(
    //input  wire [31:0]               Bus2IP_Addr,    //CÃ­mbusz.
    //input  wire [0:0]                Bus2IP_CS,         //A perifÃ©ria cÃ­mtartomÃ¡nyÃ¡nak elÃ©rÃ©sÃ©t jelzÅ‘ jel.
    //input  wire                      Bus2IP_RNW,        //A mÅ±velet tÃ­pusÃ¡t (0: Ã­rÃ¡s, 1: olvasÃ¡s) jelzÅ‘ jel.
-   input  wire [C_SLV_DWIDTH-1:0]   Bus2IP_Data,      //Ã�rÃ¡si adatbusz.
+   input  wire [C_SLV_DWIDTH-1:0]   Bus2IP_Data,      //Ã?rÃ¡si adatbusz.
    input  wire [C_SLV_DWIDTH/8-1:0] Bus2IP_BE,        //BÃ¡jt engedÃ©lyezÅ‘ jelek (csak Ã­rÃ¡s esetÃ©n Ã©rvÃ©nyesek).
    input  wire [C_NUM_REG-1:0]      Bus2IP_RdCE,      //A regiszterek olvasÃ¡s engedÃ©lyezÅ‘ jelei.
    input  wire [C_NUM_REG-1:0]      Bus2IP_WrCE,      //A regiszterek Ã­rÃ¡s engedÃ©lyezÅ‘ jelei.
@@ -51,6 +51,10 @@ reg fifo_rd;
 wire fifo_empty;
 
 always @(posedge Bus2IP_Clk) begin
+    if(rst) begin
+        fifo_rd <= 0;
+        spi_valid <= 0;
+    end else begin
       if (fifo_empty == 0 && spi_ready == 1) begin
          fifo_rd <= 1;
          spi_valid <= 1;
@@ -60,6 +64,7 @@ always @(posedge Bus2IP_Clk) begin
          fifo_rd <= 0;
          spi_valid <= 0;
       end
+  end
 end
 
 bus_if bus_if_inst(
@@ -67,8 +72,8 @@ bus_if bus_if_inst(
    .Bus2IP_Resetn(Bus2IP_Resetn),
    .Bus2IP_Data(Bus2IP_Data),
    .Bus2IP_BE(Bus2IP_BE),
-   .Bus2IP_RdCE(Bus2IP_RdCE),
-   .Bus2IP_WrCE(Bus2IP_WrCE),
+   .Bus2IP_RdCE(Bus2IP_RdCE[0]),
+   .Bus2IP_WrCE(Bus2IP_WrCE[0]),
    .IP2Bus_Data(IP2Bus_Data),
    .IP2Bus_RdAck(IP2Bus_RdAck),
    .IP2Bus_WrAck(IP2Bus_WrAck),

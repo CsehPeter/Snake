@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to E:\MB_System\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to E:\Snake\XPS\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 TABLE OF CONTENTS
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "system_microblaze_0_i_bram_ctrl_wrapper_xst.prj"
-Verilog Include Directory          : {"E:\MB_System\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"E:\Snake\XPS\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx9tqg144-2
@@ -98,7 +98,7 @@ Parsing architecture <imp> of entity <lmb_mux>.
 Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_bram_if_cntlr.vhd" into library lmb_bram_if_cntlr_v3_10_c
 Parsing entity <lmb_bram_if_cntlr>.
 Parsing architecture <imp> of entity <lmb_bram_if_cntlr>.
-Parsing VHDL file "\\vboxsrv\sharedfolder\MB_System\hdl\system_microblaze_0_i_bram_ctrl_wrapper.vhd" into library work
+Parsing VHDL file "\\vboxsrv\sharedfolder\Snake\XPS\hdl\system_microblaze_0_i_bram_ctrl_wrapper.vhd" into library work
 Parsing entity <system_microblaze_0_i_bram_ctrl_wrapper>.
 Parsing architecture <STRUCTURE> of entity <system_microblaze_0_i_bram_ctrl_wrapper>.
 
@@ -119,7 +119,7 @@ Elaborating entity <pselect_mask> (architecture <imp>) with generics from librar
 =========================================================================
 
 Synthesizing Unit <system_microblaze_0_i_bram_ctrl_wrapper>.
-    Related source file is "\\vboxsrv\sharedfolder\MB_System\hdl\system_microblaze_0_i_bram_ctrl_wrapper.vhd".
+    Related source file is "\\vboxsrv\sharedfolder\Snake\XPS\hdl\system_microblaze_0_i_bram_ctrl_wrapper.vhd".
     Summary:
 	no macro.
 Unit <system_microblaze_0_i_bram_ctrl_wrapper> synthesized.

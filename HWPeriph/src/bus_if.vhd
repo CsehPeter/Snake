@@ -28,8 +28,8 @@ port
 
 	Bus2IP_Data : in std_logic_vector((C_SLV_DWIDTH - 1) downto 0);
 	Bus2IP_BE : in std_logic_vector((C_SLV_DWIDTH / 8 - 1) downto 0);
-	Bus2IP_RdCE : in std_logic_vector((C_NUM_REG - 1) downto 0);
-	Bus2IP_WrCE : in std_logic_vector((C_NUM_REG - 1) downto 0);
+	Bus2IP_RdCE : in std_logic;
+	Bus2IP_WrCE : in std_logic;
 
 	IP2Bus_Data : out std_logic_vector((C_SLV_DWIDTH - 1) downto 0);
 	IP2Bus_RdAck : out std_logic;
@@ -61,18 +61,20 @@ rst <= not(Bus2IP_Resetn);
 ---------------------------------------------------------------------------------------
 --	Bus READ
 ---------------------------------------------------------------------------------------
-proc_read : process(clk)
-begin
-	if(rising_edge(clk)) then
-		if(rst = '1') then
-			IP2Bus_Data <= (others => '0');
-		else
-			if(Bus2IP_RdCE = "1" and Bus2IP_BE = "1111") then
-				IP2Bus_Data <= cmd_reg;
-			end if;
-		end if;	
-	end if;
-end process proc_read;
+--proc_read : process(clk)
+--begin
+--	if(rising_edge(clk)) then
+--		if(rst = '1') then
+--			IP2Bus_Data <= (others => '0');
+--		else
+--			if(Bus2IP_RdCE = "1" and Bus2IP_BE = "1111") then
+--				IP2Bus_Data <= cmd_reg;
+--			end if;
+--		end if;	
+--	end if;
+--end process proc_read;
+
+IP2Bus_Data <= cmd_reg when (Bus2IP_RdCE = '1' and Bus2IP_BE = "1111") else (others => '0');
 
 ---------------------------------------------------------------------------------------
 --	Bus WRITE
@@ -86,7 +88,7 @@ begin
 		else
 
 			--WRITE BUS
-			if(Bus2IP_WrCE = "1" and Bus2IP_BE = "1111") then
+			if(Bus2IP_WrCE = '1' and Bus2IP_BE = "1111") then
 
 				cmd_reg <= Bus2IP_Data;
 
@@ -114,8 +116,8 @@ cmd <= cmd_reg(8 downto 0);
 ---------------------------------------------------------------------------------------
 --	Bus ACKnowledge and ERROR signals
 ---------------------------------------------------------------------------------------
-IP2Bus_RdAck <= '1' when (Bus2IP_RdCE > "0" and Bus2IP_BE = "1111") else '0';
-IP2Bus_WrAck <= '1' when (Bus2IP_WrCE > "0" and Bus2IP_BE = "1111") else '0';
+IP2Bus_RdAck <= '1' when (Bus2IP_RdCE = '0' and Bus2IP_BE = "1111") else '0';
+IP2Bus_WrAck <= '1' when (Bus2IP_WrCE = '0' and Bus2IP_BE = "1111") else '0';
 IP2Bus_Error <= '0';
 
 end rtl;

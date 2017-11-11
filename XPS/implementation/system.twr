@@ -91,9 +91,9 @@ PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0"
 TS_clk50M HIGH         50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 307787 paths analyzed, 13113 endpoints analyzed, 0 failing endpoints
+ 306315 paths analyzed, 12244 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  10.003ns.
+ Minimum period is  11.007ns.
 --------------------------------------------------------------------------------
 
 
@@ -104,8 +104,8 @@ Derived Constraints for TS_clk50M
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_clk50M                      |     20.000ns|      5.000ns|     10.003ns|            0|            0|            0|       307787|
-| TS_clock_generator_0_clock_gen|     20.000ns|     10.003ns|          N/A|            0|            0|       307787|            0|
+|TS_clk50M                      |     20.000ns|      5.000ns|     11.007ns|            0|            0|            0|       306315|
+| TS_clock_generator_0_clock_gen|     20.000ns|     11.007ns|          N/A|            0|            0|       306315|            0|
 | erator_0_SIG_PLL0_CLKOUT0     |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -121,7 +121,7 @@ Clock to Setup on destination clock clk50M
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk50M         |   10.003|         |         |         |
+clk50M         |   11.007|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -130,20 +130,20 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 307805 paths, 0 nets, and 14815 connections
+Constraints cover 306333 paths, 0 nets, and 14018 connections
 
 Design statistics:
-   Minimum period:  10.003ns   (Maximum frequency:  99.970MHz)
+   Minimum period:  11.007ns   (Maximum frequency:  90.851MHz)
 
 
-Analysis completed Fri Nov 03 22:12:27 2017 
+Analysis completed Sat Nov 11 17:45:31 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 178 MB
+Peak Memory Usage: 177 MB
 
 
 

@@ -23,10 +23,10 @@ entity system_stub is
     sram_csn : out std_logic;
     sdram_csn : out std_logic;
     spi_sdcard_csn : out std_logic;
-    spi_flash_csn : out std_logic;
     spi_lcd_csn : out std_logic;
-    spi_clk : out std_logic;
     spi_mosi : out std_logic;
+    spi_clk : out std_logic;
+    spi_flash_csn : out std_logic;
     spi_miso : out std_logic
   );
 end system_stub;
@@ -49,10 +49,10 @@ architecture STRUCTURE of system_stub is
       sram_csn : out std_logic;
       sdram_csn : out std_logic;
       spi_sdcard_csn : out std_logic;
-      spi_flash_csn : out std_logic;
       spi_lcd_csn : out std_logic;
-      spi_clk : out std_logic;
       spi_mosi : out std_logic;
+      spi_clk : out std_logic;
+      spi_flash_csn : out std_logic;
       spi_miso : out std_logic
     );
   end component;
@@ -78,10 +78,10 @@ begin
       sram_csn => sram_csn,
       sdram_csn => sdram_csn,
       spi_sdcard_csn => spi_sdcard_csn,
-      spi_flash_csn => spi_flash_csn,
       spi_lcd_csn => spi_lcd_csn,
-      spi_clk => spi_clk,
       spi_mosi => spi_mosi,
+      spi_clk => spi_clk,
+      spi_flash_csn => spi_flash_csn,
       spi_miso => spi_miso
     );
 

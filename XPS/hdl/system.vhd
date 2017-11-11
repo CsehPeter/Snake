@@ -23,10 +23,10 @@ entity system is
     sram_csn : out std_logic;
     sdram_csn : out std_logic;
     spi_sdcard_csn : out std_logic;
-    spi_flash_csn : out std_logic;
     spi_lcd_csn : out std_logic;
-    spi_clk : out std_logic;
     spi_mosi : out std_logic;
+    spi_clk : out std_logic;
+    spi_flash_csn : out std_logic;
     spi_miso : out std_logic
   );
 end system;
@@ -1969,10 +1969,10 @@ begin
   logsys_axi_sp6_simpleio_0_cpld_miso <= cpld_miso;
   net_logsys_axi_sp6_simpleio_0_btn_in_pin <= bt;
   spi_sdcard_csn <= lcd_ip_0_sdcard_csn;
-  spi_flash_csn <= lcd_ip_0_flash_csn;
   spi_lcd_csn <= lcd_ip_0_lcd_csn;
-  spi_clk <= lcd_ip_0_sck;
   spi_mosi <= lcd_ip_0_mosi;
+  spi_clk <= lcd_ip_0_sck;
+  spi_flash_csn <= lcd_ip_0_flash_csn;
   spi_miso <= lcd_ip_0_miso;
   pgassign1(2) <= axi_timer_0_Interrupt;
   pgassign1(1) <= RS232_Interrupt;

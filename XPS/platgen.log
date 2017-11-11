@@ -5,7 +5,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Command Line: platgen -p xc6slx9tqg144-2 -lang vhdl -intstyle default -msg
 __xps/ise/xmsgprops.lst system.mhs 
 
-Parse E:/MB_System/system.mhs ...
+Parse E:/Snake/XPS/system.mhs ...
 
 Read MPD definitions ...
 
@@ -45,11 +45,11 @@ Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
 Address Map for Processor microblaze_0
   (0000000000-0x00007fff) microblaze_0_d_bram_ctrl	microblaze_0_dlmb
   (0000000000-0x00007fff) microblaze_0_i_bram_ctrl	microblaze_0_ilmb
-  (0x40600000-0x4060ffff) RS232	axi4lite_0
-  (0x41200000-0x4120ffff) microblaze_0_intc	axi4lite_0
-  (0x41c00000-0x41c0ffff) axi_timer_0	axi4lite_0
-  (0x60000000-0x6000ffff) logsys_axi_sp6_simpleio_0	axi4lite_0
-  (0x70000000-0x7000ffff) lcd_ip_0	axi4lite_0
+  (0x40000000-0x4000ffff) microblaze_0_intc	axi4lite_0
+  (0x41000000-0x4100ffff) axi_timer_0	axi4lite_0
+  (0x42000000-0x4200ffff) RS232	axi4lite_0
+  (0x43000000-0x4300ffff) logsys_axi_sp6_simpleio_0	axi4lite_0
+  (0x50000000-0x5000ffff) lcd_ip_0	axi4lite_0
 INFO:EDK:4130 - IPNAME: lmb_v10, INSTANCE:microblaze_0_ilmb - tool is overriding
    PARAMETER C_LMB_NUM_SLAVES value to 1 -
    C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_v10_v2_00_b\data
@@ -178,36 +178,12 @@ Creating hardware output directories ...
 Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
-IPNAME:proc_sys_reset INSTANCE:proc_sys_reset_0 - E:\MB_System\system.mhs line
-35 - Copying cache implementation netlist
-IPNAME:axi_intc INSTANCE:microblaze_0_intc - E:\MB_System\system.mhs line 48 -
-Copying cache implementation netlist
-IPNAME:lmb_v10 INSTANCE:microblaze_0_ilmb - E:\MB_System\system.mhs line 59 -
-Copying cache implementation netlist
-IPNAME:lmb_bram_if_cntlr INSTANCE:microblaze_0_i_bram_ctrl -
-E:\MB_System\system.mhs line 66 - Copying cache implementation netlist
-IPNAME:lmb_v10 INSTANCE:microblaze_0_dlmb - E:\MB_System\system.mhs line 75 -
-Copying cache implementation netlist
-IPNAME:lmb_bram_if_cntlr INSTANCE:microblaze_0_d_bram_ctrl -
-E:\MB_System\system.mhs line 82 - Copying cache implementation netlist
-IPNAME:bram_block INSTANCE:microblaze_0_bram_block - E:\MB_System\system.mhs
-line 91 - Copying cache implementation netlist
-IPNAME:microblaze INSTANCE:microblaze_0 - E:\MB_System\system.mhs line 98 -
-Copying cache implementation netlist
-IPNAME:logsys_axi_sp6_simpleio INSTANCE:logsys_axi_sp6_simpleio_0 -
-E:\MB_System\system.mhs line 123 - Copying cache implementation netlist
-IPNAME:mdm INSTANCE:debug_module - E:\MB_System\system.mhs line 157 - Copying
-cache implementation netlist
-IPNAME:axi_timer INSTANCE:axi_timer_0 - E:\MB_System\system.mhs line 182 -
-Copying cache implementation netlist
-IPNAME:axi_uartlite INSTANCE:rs232 - E:\MB_System\system.mhs line 202 - Copying
-cache implementation netlist
 
 Elaborating instances ...
-IPNAME:bram_block INSTANCE:microblaze_0_bram_block - E:\MB_System\system.mhs
+IPNAME:bram_block INSTANCE:microblaze_0_bram_block - E:\Snake\XPS\system.mhs
 line 91 - elaborating IP
-IPNAME:clock_generator INSTANCE:clock_generator_0 - E:\MB_System\system.mhs line
-169 - elaborating IP
+IPNAME:clock_generator INSTANCE:clock_generator_0 - E:\Snake\XPS\system.mhs line
+168 - elaborating IP
 ClkGen elaborate status: PASSED
 ----------------------------------------
 ----------------------------------------
@@ -215,7 +191,7 @@ ClkGen elaborate status: PASSED
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 1.00 seconds
+Completion time: 0.00 seconds
 
 Constructing platform-level connectivity ...
 Completion time: 0.00 seconds
@@ -231,22 +207,46 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
-INSTANCE:logsys_axi_sp6_simpleio_0 - E:\MB_System\system.mhs line 123 - Running
-XST synthesis
-INSTANCE:lcd_ip_0 - E:\MB_System\system.mhs line 141 - Running XST synthesis
-INSTANCE:clock_generator_0 - E:\MB_System\system.mhs line 169 - Running XST
+INSTANCE:proc_sys_reset_0 - E:\Snake\XPS\system.mhs line 35 - Running XST
 synthesis
-INSTANCE:axi4lite_0 - E:\MB_System\system.mhs line 194 - Running XST synthesis
+INSTANCE:microblaze_0_intc - E:\Snake\XPS\system.mhs line 48 - Running XST
+synthesis
+INSTANCE:microblaze_0_ilmb - E:\Snake\XPS\system.mhs line 59 - Running XST
+synthesis
+INSTANCE:microblaze_0_i_bram_ctrl - E:\Snake\XPS\system.mhs line 66 - Running
+XST synthesis
+INSTANCE:microblaze_0_dlmb - E:\Snake\XPS\system.mhs line 75 - Running XST
+synthesis
+INSTANCE:microblaze_0_d_bram_ctrl - E:\Snake\XPS\system.mhs line 82 - Running
+XST synthesis
+INSTANCE:microblaze_0_bram_block - E:\Snake\XPS\system.mhs line 91 - Running XST
+synthesis
+INSTANCE:microblaze_0 - E:\Snake\XPS\system.mhs line 98 - Running XST synthesis
+INSTANCE:logsys_axi_sp6_simpleio_0 - E:\Snake\XPS\system.mhs line 123 - Running
+XST synthesis
+INSTANCE:lcd_ip_0 - E:\Snake\XPS\system.mhs line 141 - Running XST synthesis
+INSTANCE:debug_module - E:\Snake\XPS\system.mhs line 156 - Running XST synthesis
+INSTANCE:clock_generator_0 - E:\Snake\XPS\system.mhs line 168 - Running XST
+synthesis
+INSTANCE:axi_timer_0 - E:\Snake\XPS\system.mhs line 181 - Running XST synthesis
+INSTANCE:axi4lite_0 - E:\Snake\XPS\system.mhs line 193 - Running XST synthesis
+INSTANCE:rs232 - E:\Snake\XPS\system.mhs line 201 - Running XST synthesis
 
 Running NGCBUILD ...
+IPNAME:system_microblaze_0_ilmb_wrapper INSTANCE:microblaze_0_ilmb -
+E:\Snake\XPS\system.mhs line 59 - Running NGCBUILD
+IPNAME:system_microblaze_0_dlmb_wrapper INSTANCE:microblaze_0_dlmb -
+E:\Snake\XPS\system.mhs line 75 - Running NGCBUILD
+IPNAME:system_microblaze_0_wrapper INSTANCE:microblaze_0 -
+E:\Snake\XPS\system.mhs line 98 - Running NGCBUILD
 IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
-E:\MB_System\system.mhs line 169 - Running NGCBUILD
-IPNAME:system_axi4lite_0_wrapper INSTANCE:axi4lite_0 - E:\MB_System\system.mhs
-line 194 - Running NGCBUILD
+E:\Snake\XPS\system.mhs line 168 - Running NGCBUILD
+IPNAME:system_axi4lite_0_wrapper INSTANCE:axi4lite_0 - E:\Snake\XPS\system.mhs
+line 193 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/system.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 39.00 seconds
+Total run time: 155.00 seconds
