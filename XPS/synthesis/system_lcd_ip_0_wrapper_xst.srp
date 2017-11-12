@@ -3,8 +3,8 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to E:\Snake\XPS\synthesis\xst_temp_dir\
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 TABLE OF CONTENTS
@@ -466,15 +466,15 @@ Going to vhdl side to elaborate module bus_if
 
 Elaborating entity <bus_if> (architecture <rtl>) with generics from library <lcd_ip_v1_00_a>.
 Back to verilog to continue elaboration
-Going to vhdl side to elaborate module spi
-
-Elaborating entity <spi> (architecture <rtl>) from library <lcd_ip_v1_00_a>.
-INFO:HDLCompiler:679 - "//vboxsrv/sharedfolder/Snake/XPS/pcores/lcd_ip_v1_00_a/hdl/vhdl/spi.vhd" Line 78. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "//vboxsrv/sharedfolder/Snake/XPS/pcores/lcd_ip_v1_00_a/hdl/vhdl/spi.vhd" Line 135. Case statement is complete. others clause is never selected
-Back to verilog to continue elaboration
 Going to vhdl side to elaborate module fifo
 
 Elaborating entity <fifo> (architecture <rtl>) with generics from library <lcd_ip_v1_00_a>.
+Back to verilog to continue elaboration
+Going to vhdl side to elaborate module spi
+
+Elaborating entity <spi> (architecture <rtl>) from library <lcd_ip_v1_00_a>.
+INFO:HDLCompiler:679 - "//vboxsrv/sharedfolder/Snake/XPS/pcores/lcd_ip_v1_00_a/hdl/vhdl/spi.vhd" Line 79. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "//vboxsrv/sharedfolder/Snake/XPS/pcores/lcd_ip_v1_00_a/hdl/vhdl/spi.vhd" Line 155. Case statement is complete. others clause is never selected
 Back to verilog to continue elaboration
 Back to vhdl to continue elaboration
 
@@ -593,10 +593,8 @@ Synthesizing Unit <user_logic>.
     Related source file is "//vboxsrv/sharedfolder/Snake/XPS/pcores/lcd_ip_v1_00_a/hdl/verilog/user_logic.v".
         C_NUM_REG = 1
         C_SLV_DWIDTH = 32
-    Found 1-bit register for signal <spi_valid>.
-    Found 1-bit register for signal <fifo_rd>.
     Summary:
-	inferred   2 D-type flip-flop(s).
+	no macro.
 Unit <user_logic> synthesized.
 
 Synthesizing Unit <bus_if>.
@@ -610,25 +608,6 @@ Synthesizing Unit <bus_if>.
 	inferred   2 Multiplexer(s).
 Unit <bus_if> synthesized.
 
-Synthesizing Unit <spi>.
-    Related source file is "//vboxsrv/sharedfolder/Snake/XPS/pcores/lcd_ip_v1_00_a/hdl/vhdl/spi.vhd".
-    Found 1-bit register for signal <fsm>.
-    Found 8-bit register for signal <cmd_reg>.
-    Found 1-bit register for signal <mode_reg>.
-    Found 1-bit register for signal <lcd_csn>.
-    Found 1-bit register for signal <ready>.
-    Found 3-bit register for signal <fsm_cntr>.
-    Found 1-bit register for signal <mosi>.
-    Found 1-bit register for signal <miso>.
-    Found 1-bit register for signal <sck_wire>.
-    Found 1-bit register for signal <send_cntr>.
-    Found 3-bit subtractor for signal <GND_19_o_GND_19_o_sub_9_OUT<2:0>> created at line 132.
-    Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  19 D-type flip-flop(s).
-	inferred   4 Multiplexer(s).
-Unit <spi> synthesized.
-
 Synthesizing Unit <fifo>.
     Related source file is "//vboxsrv/sharedfolder/Snake/XPS/pcores/lcd_ip_v1_00_a/hdl/vhdl/fifo.vhd".
         DEPTH = 36
@@ -639,13 +618,13 @@ Synthesizing Unit <fifo>.
     Found 6-bit register for signal <wr_pt>.
     Found 6-bit register for signal <cnt>.
     Found 9-bit register for signal <dout>.
-    Found 6-bit adder for signal <rd_pt[5]_GND_20_o_add_4_OUT> created at line 81.
-    Found 6-bit adder for signal <cnt[5]_GND_20_o_add_14_OUT> created at line 99.
-    Found 6-bit adder for signal <wr_pt[5]_GND_20_o_add_16_OUT> created at line 104.
-    Found 6-bit subtractor for signal <GND_20_o_GND_20_o_sub_3_OUT<5:0>> created at line 76.
+    Found 6-bit adder for signal <rd_pt[5]_GND_19_o_add_4_OUT> created at line 81.
+    Found 6-bit adder for signal <cnt[5]_GND_19_o_add_14_OUT> created at line 99.
+    Found 6-bit adder for signal <wr_pt[5]_GND_19_o_add_16_OUT> created at line 104.
+    Found 6-bit subtractor for signal <GND_19_o_GND_19_o_sub_3_OUT<5:0>> created at line 76.
 WARNING:Xst:3035 - Index value(s) does not match array range for signal <mem>, simulation mismatch.
     Found 36x9-bit dual-port RAM <Mram_mem> for signal <mem>.
-    Found 6-bit comparator greater for signal <cnt[5]_PWR_21_o_LessThan_14_o> created at line 98
+    Found 6-bit comparator greater for signal <cnt[5]_PWR_19_o_LessThan_14_o> created at line 98
     Summary:
 	inferred   1 RAM(s).
 	inferred   4 Adder/Subtractor(s).
@@ -653,6 +632,40 @@ WARNING:Xst:3035 - Index value(s) does not match array range for signal <mem>, s
 	inferred   1 Comparator(s).
 	inferred   7 Multiplexer(s).
 Unit <fifo> synthesized.
+
+Synthesizing Unit <spi>.
+    Related source file is "//vboxsrv/sharedfolder/Snake/XPS/pcores/lcd_ip_v1_00_a/hdl/vhdl/spi.vhd".
+    Found 2-bit register for signal <fsm>.
+    Found 1-bit register for signal <rd>.
+    Found 1-bit register for signal <lcd_csn>.
+    Found 1-bit register for signal <mosi>.
+    Found 1-bit register for signal <miso>.
+    Found 1-bit register for signal <sck_wire>.
+    Found 8-bit register for signal <cmd_reg>.
+    Found 1-bit register for signal <mode_reg>.
+    Found 3-bit register for signal <fsm_cntr>.
+    Found 1-bit register for signal <send_cntr>.
+    Found finite state machine <FSM_1> for signal <fsm>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit subtractor for signal <GND_20_o_GND_20_o_sub_8_OUT<2:0>> created at line 150.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  18 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <spi> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -665,8 +678,8 @@ Macro Statistics
  4-bit adder                                           : 1
  6-bit adder                                           : 3
  6-bit subtractor                                      : 1
-# Registers                                            : 30
- 1-bit register                                        : 19
+# Registers                                            : 27
+ 1-bit register                                        : 16
  2-bit register                                        : 2
  3-bit register                                        : 1
  32-bit register                                       : 2
@@ -677,12 +690,13 @@ Macro Statistics
 # Comparators                                          : 1
  6-bit comparator greater                              : 1
 # Multiplexers                                         : 15
- 1-bit 2-to-1 multiplexer                              : 5
+ 1-bit 2-to-1 multiplexer                              : 4
+ 3-bit 2-to-1 multiplexer                              : 1
  32-bit 2-to-1 multiplexer                             : 3
  6-bit 2-to-1 multiplexer                              : 4
  8-bit 2-to-1 multiplexer                              : 1
  9-bit 2-to-1 multiplexer                              : 2
-# FSMs                                                 : 1
+# FSMs                                                 : 2
 
 =========================================================================
 
@@ -733,17 +747,17 @@ Macro Statistics
  3-bit down counter                                    : 1
  4-bit up counter                                      : 1
  6-bit up counter                                      : 2
-# Registers                                            : 110
- Flip-Flops                                            : 110
+# Registers                                            : 107
+ Flip-Flops                                            : 107
 # Comparators                                          : 1
  6-bit comparator greater                              : 1
-# Multiplexers                                         : 44
- 1-bit 2-to-1 multiplexer                              : 37
+# Multiplexers                                         : 43
+ 1-bit 2-to-1 multiplexer                              : 36
  32-bit 2-to-1 multiplexer                             : 2
  6-bit 2-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 1
  9-bit 2-to-1 multiplexer                              : 2
-# FSMs                                                 : 1
+# FSMs                                                 : 2
 
 =========================================================================
 
@@ -752,8 +766,6 @@ Macro Statistics
 =========================================================================
 WARNING:Xst:1293 - FF/Latch <s_axi_rresp_i_0> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_axi_bresp_i_0> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <spi_valid> in Unit <user_logic> is equivalent to the following FF/Latch, which will be removed : <fifo_rd> 
-INFO:Xst:2261 - The FF/Latch <lcd_csn> in Unit <spi> is equivalent to the following FF/Latch, which will be removed : <ready> 
 INFO:Xst:2261 - The FF/Latch <I_DECODER/ce_out_i_0> in Unit <slave_attachment> is equivalent to the following FF/Latch, which will be removed : <I_DECODER/cs_out_i_0> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/FSM_0> on signal <state[1:2]> with user encoding.
@@ -765,6 +777,16 @@ Optimizing FSM <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/FSM_0> on signal <st
  sm_write | 10
  sm_resp  | 11
 ----------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <lcd_ip_0/USER_LOGIC_I/spi_inst/FSM_1> on signal <fsm[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ idle  | 00
+ read1 | 01
+ read2 | 10
+ shift | 11
+-------------------
 
 Optimizing unit <system_lcd_ip_0_wrapper> ...
 
@@ -772,136 +794,15 @@ Optimizing unit <slave_attachment> ...
 
 Optimizing unit <bus_if> ...
 
-Optimizing unit <spi> ...
-
 Optimizing unit <fifo> ...
+
+Optimizing unit <spi> ...
 WARNING:Xst:1293 - FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_1> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_1> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_2> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_3> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_4> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_5> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_6> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_7> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_8> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_9> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_10> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_11> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_13> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_14> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_15> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_16> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_17> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_18> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_19> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_20> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_21> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_22> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_23> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/full> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_0> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_1> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_2> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_3> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_4> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_5> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/rd_pt_0> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/rd_pt_1> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/rd_pt_2> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/rd_pt_3> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/rd_pt_4> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/rd_pt_5> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/wr_pt_0> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/wr_pt_1> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/wr_pt_2> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/wr_pt_3> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/wr_pt_4> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/wr_pt_5> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_0> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_1> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_12> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_13> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_14> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_15> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_16> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_17> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_18> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_19> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_20> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_21> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_22> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_23> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_24> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_25> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_26> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_27> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_28> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_29> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_30> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_24> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_25> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_26> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_27> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_28> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_29> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_30> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_31> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/wr> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_0> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_1> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_2> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_3> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_6> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_7> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_8> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_9> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_10> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_11> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_12> is unconnected in block <system_lcd_ip_0_wrapper>.
-WARNING:Xst:1710 - FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/empty> (without init value) has a constant value of 1 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_0> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_1> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_2> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_3> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_4> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_5> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_valid> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/lcd_csn> (without init value) has a constant value of 1 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_7> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_6> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/mosi> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/dout_8> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/dout_7> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/dout_6> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/dout_5> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/dout_4> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/dout_3> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/dout_2> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/dout_1> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/dout_0> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/mode_reg> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/miso> (without init value) has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> is unconnected in block <system_lcd_ip_0_wrapper>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/Mram_mem3> is unconnected in block <system_lcd_ip_0_wrapper>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/Mram_mem2> is unconnected in block <system_lcd_ip_0_wrapper>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <lcd_ip_0/USER_LOGIC_I/fifo_inst/Mram_mem1> is unconnected in block <system_lcd_ip_0_wrapper>.
-WARNING:Xst:1293 - FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_cntr_2> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_cntr_1> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_cntr_0> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_0> has a constant value of 0 in block <system_lcd_ip_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3> of sequential type is unconnected in block <system_lcd_ip_0_wrapper>.
-WARNING:Xst:2677 - Node <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_2> of sequential type is unconnected in block <system_lcd_ip_0_wrapper>.
-WARNING:Xst:2677 - Node <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_1> of sequential type is unconnected in block <system_lcd_ip_0_wrapper>.
-WARNING:Xst:2677 - Node <lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_0> of sequential type is unconnected in block <system_lcd_ip_0_wrapper>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block system_lcd_ip_0_wrapper, actual ratio is 0.
+Found area constraint ratio of 100 (+ 0) on block system_lcd_ip_0_wrapper, actual ratio is 3.
 
 Final Macro Processing ...
 
@@ -909,8 +810,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 6
- Flip-Flops                                            : 6
+# Registers                                            : 125
+ Flip-Flops                                            : 125
 
 =========================================================================
 
@@ -933,14 +834,22 @@ Top Level Output File Name         : system_lcd_ip_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 8
+# BELS                             : 162
 #      GND                         : 1
-#      LUT2                        : 1
-#      LUT4                        : 4
-#      LUT6                        : 1
+#      INV                         : 6
+#      LUT2                        : 11
+#      LUT3                        : 57
+#      LUT4                        : 38
+#      LUT5                        : 26
+#      LUT6                        : 19
+#      MUXF7                       : 3
 #      VCC                         : 1
-# FlipFlops/Latches                : 6
-#      FDR                         : 6
+# FlipFlops/Latches                : 125
+#      FDE                         : 14
+#      FDR                         : 46
+#      FDRE                        : 65
+# RAMS                             : 3
+#      RAM64M                      : 3
 
 Device utilization summary:
 ---------------------------
@@ -949,16 +858,18 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:               6  out of  11440     0%  
- Number of Slice LUTs:                    6  out of   5720     0%  
-    Number used as Logic:                 6  out of   5720     0%  
+ Number of Slice Registers:             125  out of  11440     1%  
+ Number of Slice LUTs:                  169  out of   5720     2%  
+    Number used as Logic:               157  out of   5720     2%  
+    Number used as Memory:               12  out of   1440     0%  
+       Number used as RAM:               12
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     12
-   Number with an unused Flip Flop:       6  out of     12    50%  
-   Number with an unused LUT:             6  out of     12    50%  
-   Number of fully used LUT-FF pairs:     0  out of     12     0%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:    176
+   Number with an unused Flip Flop:      51  out of    176    28%  
+   Number with an unused LUT:             7  out of    176     3%  
+   Number of fully used LUT-FF pairs:   118  out of    176    67%  
+   Number of unique control sets:        20
 
 IO Utilization: 
  Number of IOs:                         154
@@ -987,7 +898,7 @@ Clock Information:
 -----------------------------------+-----------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                           | Load  |
 -----------------------------------+-----------------------------------------------------------------+-------+
-S_AXI_ACLK                         | NONE(lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1)| 6     |
+S_AXI_ACLK                         | NONE(lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1)| 128   |
 -----------------------------------+-----------------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -999,9 +910,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.663ns (Maximum Frequency: 375.516MHz)
-   Minimum input arrival time before clock: 1.585ns
-   Maximum output required time after clock: 0.525ns
+   Minimum period: 4.522ns (Maximum Frequency: 221.141MHz)
+   Minimum input arrival time before clock: 2.635ns
+   Maximum output required time after clock: 2.859ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1010,64 +921,64 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
-  Clock period: 2.663ns (frequency: 375.516MHz)
-  Total number of paths / destination ports: 19 / 9
+  Clock period: 4.522ns (frequency: 221.141MHz)
+  Total number of paths / destination ports: 879 / 275
 -------------------------------------------------------------------------
-Delay:               2.663ns (Levels of Logic = 2)
-  Source:            lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i (FF)
-  Destination:       lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1 (FF)
+Delay:               4.522ns (Levels of Logic = 2)
+  Source:            lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_2 (FF)
+  Destination:       lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_5 (FF)
   Source Clock:      S_AXI_ACLK rising
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i to lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+  Data Path: lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_2 to lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              2   0.525   0.834  lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i (lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i)
-     LUT4:I2->O            2   0.250   0.726  lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2-In_SW0 (N2)
-     LUT4:I3->O            1   0.254   0.000  lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2-In (lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2-In)
-     FDR:D                     0.074          lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2
+     FDRE:C->Q             9   0.525   1.204  lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_2 (lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_2)
+     LUT3:I0->O           14   0.235   1.127  lcd_ip_0/USER_LOGIC_I/fifo_inst/Mmux_cnt[5]_cnt[5]_mux_21_OUT231 (lcd_ip_0/USER_LOGIC_I/fifo_inst/Mmux_cnt[5]_cnt[5]_mux_21_OUT23)
+     LUT6:I5->O            6   0.254   0.875  lcd_ip_0/USER_LOGIC_I/fifo_inst/_n0126_inv (lcd_ip_0/USER_LOGIC_I/fifo_inst/_n0126_inv)
+     FDRE:CE                   0.302          lcd_ip_0/USER_LOGIC_I/fifo_inst/cnt_0
     ----------------------------------------
-    Total                      2.663ns (1.103ns logic, 1.560ns route)
-                                       (41.4% logic, 58.6% route)
+    Total                      4.522ns (1.316ns logic, 3.206ns route)
+                                       (29.1% logic, 70.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 13 / 7
+  Total number of paths / destination ports: 148 / 133
 -------------------------------------------------------------------------
-Offset:              1.585ns (Levels of Logic = 2)
-  Source:            S_AXI_BREADY (PAD)
-  Destination:       lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1 (FF)
+Offset:              2.635ns (Levels of Logic = 1)
+  Source:            S_AXI_ARESETN (PAD)
+  Destination:       lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_31 (FF)
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: S_AXI_BREADY to lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+  Data Path: S_AXI_ARESETN to lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT4:I0->O            2   0.254   0.726  lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2-In_SW0 (N2)
-     LUT4:I3->O            1   0.254   0.000  lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2-In (lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2-In)
-     FDR:D                     0.074          lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2
+     INV:I->O             63   0.255   1.921  lcd_ip_0/USER_LOGIC_I/rst1_INV_0 (lcd_ip_0/USER_LOGIC_I/bus_if_inst/Bus2IP_Resetn_inv)
+     FDR:R                     0.459          lcd_ip_0/USER_LOGIC_I/bus_if_inst/cmd_reg_0
     ----------------------------------------
-    Total                      1.585ns (0.859ns logic, 0.726ns route)
-                                       (54.2% logic, 45.8% route)
+    Total                      2.635ns (0.714ns logic, 1.921ns route)
+                                       (27.1% logic, 72.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 3 / 3
+  Total number of paths / destination ports: 47 / 41
 -------------------------------------------------------------------------
-Offset:              0.525ns (Levels of Logic = 0)
-  Source:            lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rvalid_i (FF)
-  Destination:       S_AXI_RVALID (PAD)
+Offset:              2.859ns (Levels of Logic = 1)
+  Source:            lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0 (FF)
+  Destination:       S_AXI_ARREADY (PAD)
   Source Clock:      S_AXI_ACLK rising
 
-  Data Path: lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rvalid_i to S_AXI_RVALID
+  Data Path: lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0 to S_AXI_ARREADY
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              2   0.525   0.000  lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rvalid_i (lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rvalid_i)
+     FDRE:C->Q            70   0.525   2.084  lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0 (lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0)
+     LUT3:I1->O            1   0.250   0.000  lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rd_done1 (S_AXI_ARREADY)
     ----------------------------------------
-    Total                      0.525ns (0.525ns logic, 0.000ns route)
-                                       (100.0% logic, 0.0% route)
+    Total                      2.859ns (0.775ns logic, 2.084ns route)
+                                       (27.1% logic, 72.9% route)
 
 =========================================================================
 
@@ -1079,20 +990,20 @@ Clock to Setup on destination clock S_AXI_ACLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-S_AXI_ACLK     |    2.663|         |         |         |
+S_AXI_ACLK     |    4.522|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.81 secs
+Total CPU time to Xst completion: 5.64 secs
  
 --> 
 
-Total memory usage is 161224 kilobytes
+Total memory usage is 161160 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  135 (   0 filtered)
-Number of infos    :    9 (   0 filtered)
+Number of warnings :   14 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
 

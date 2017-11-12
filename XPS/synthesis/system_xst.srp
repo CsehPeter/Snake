@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 TABLE OF CONTENTS
@@ -1010,7 +1010,7 @@ Optimizing unit <system> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 38.
+Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 39.
 INFO:Xst:2260 - The FF/Latch <RS232/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <RS232> is equivalent to the following FF/Latch : <RS232/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi4lite_0> is equivalent to the following 3 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_2> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_3> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi4lite_0> is equivalent to the following 2 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_2> 
@@ -1065,37 +1065,38 @@ Top Level Output File Name         : system.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3663
+# BELS                             : 3817
 #      GND                         : 16
-#      INV                         : 50
+#      INV                         : 56
 #      LUT1                        : 37
-#      LUT2                        : 288
-#      LUT3                        : 517
-#      LUT4                        : 370
-#      LUT5                        : 474
-#      LUT6                        : 902
+#      LUT2                        : 298
+#      LUT3                        : 574
+#      LUT4                        : 404
+#      LUT5                        : 500
+#      LUT6                        : 920
 #      LUT6_2                      : 96
 #      MULT_AND                    : 2
 #      MUXCY                       : 145
 #      MUXCY_L                     : 291
-#      MUXF7                       : 175
+#      MUXF7                       : 178
 #      VCC                         : 11
 #      XORCY                       : 289
-# FlipFlops/Latches                : 2502
+# FlipFlops/Latches                : 2621
 #      FD                          : 283
 #      FDC                         : 38
 #      FDC_1                       : 5
 #      FDCE                        : 15
-#      FDE                         : 406
+#      FDE                         : 420
 #      FDE_1                       : 8
 #      FDP                         : 5
-#      FDR                         : 737
-#      FDRE                        : 943
+#      FDR                         : 777
+#      FDRE                        : 1008
 #      FDRE_1                      : 1
 #      FDS                         : 21
 #      FDSE                        : 40
-# RAMS                             : 32
+# RAMS                             : 35
 #      RAM32M                      : 16
+#      RAM64M                      : 3
 #      RAMB16BWER                  : 16
 # Shift Registers                  : 117
 #      SRL16                       : 1
@@ -1121,19 +1122,19 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2502  out of  11440    21%  
- Number of Slice LUTs:                 2915  out of   5720    50%  
-    Number used as Logic:              2734  out of   5720    47%  
-    Number used as Memory:              181  out of   1440    12%  
-       Number used as RAM:               64
+ Number of Slice Registers:            2621  out of  11440    22%  
+ Number of Slice LUTs:                 3078  out of   5720    53%  
+    Number used as Logic:              2885  out of   5720    50%  
+    Number used as Memory:              193  out of   1440    13%  
+       Number used as RAM:               76
        Number used as SRL:              117
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4149
-   Number with an unused Flip Flop:    1647  out of   4149    39%  
-   Number with an unused LUT:          1234  out of   4149    29%  
-   Number of fully used LUT-FF pairs:  1268  out of   4149    30%  
-   Number of unique control sets:       147
+ Number of LUT Flip Flop pairs used:   4330
+   Number with an unused Flip Flop:    1709  out of   4330    39%  
+   Number with an unused LUT:          1252  out of   4330    28%  
+   Number of fully used LUT-FF pairs:  1369  out of   4330    31%  
+   Number of unique control sets:       165
 
 IO Utilization: 
  Number of IOs:                          21
@@ -1167,7 +1168,7 @@ Clock Information:
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                                                                             | Load  |
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
-clk50M                             | PLL_ADV:CLKOUT0                                                                                                   | 2420  |
+clk50M                             | PLL_ADV:CLKOUT0                                                                                                   | 2542  |
 debug_module/debug_module/drck_i   | BUFG                                                                                                              | 193   |
 debug_module/Ext_JTAG_UPDATE       | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Use_Debug_Logic.Master_Core.Debug_Perf/command_reg_0)| 40    |
 RS232/Interrupt                    | NONE(microblaze_0_intc/microblaze_0_intc/INTC_CORE_I/intr_sync_1)                                                 | 1     |
@@ -1194,7 +1195,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk50M'
   Clock period: 10.195ns (frequency: 98.092MHz)
-  Total number of paths / destination ports: 419892 / 6619
+  Total number of paths / destination ports: 421119 / 6952
 -------------------------------------------------------------------------
 Delay:               10.195ns (Levels of Logic = 9)
   Source:            axi_timer_0/axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5 (FF)
@@ -1360,7 +1361,7 @@ Offset:              8.398ns (Levels of Logic = 6)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk50M'
-  Total number of paths / destination ports: 23 / 8
+  Total number of paths / destination ports: 26 / 11
 -------------------------------------------------------------------------
 Offset:              5.415ns (Levels of Logic = 7)
   Source:            microblaze_0_d_bram_ctrl/microblaze_0_d_bram_ctrl/Sl_Rdy (FF)
@@ -1491,8 +1492,8 @@ debug_module/debug_module/drck_i|    2.860|    3.860|    3.740|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 12.85 secs
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 12.88 secs
  
 --> 
 

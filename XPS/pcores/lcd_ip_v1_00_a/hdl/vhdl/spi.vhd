@@ -29,10 +29,9 @@ port
 	miso : out std_logic;
 
 	--Inner signals
-	valid : in std_logic;
-	ready : out std_logic;
-	cmd : in std_logic_vector(7 downto 0);
-	mode : in std_logic
+	empty : in std_logic;
+	rd : out std_logic;
+	din : in std_logic_vector(8 downto 0)
 );
 end spi;
 
@@ -42,7 +41,7 @@ signal send_cntr : integer range 0 to 1 := 0;
 
 signal fsm_cntr : integer range 0 to 7 := 0;
 
-type spi_fsm_type is (IDLE, SHIFT);
+type spi_fsm_type is (IDLE, READ1, READ2, SHIFT);
 signal fsm : spi_fsm_type := IDLE;
 
 signal cmd_reg : std_logic_vector(7 downto 0) := (others => '0');
@@ -69,6 +68,8 @@ begin
 		else
 			case fsm is
 				when IDLE => send_cntr <= 0;
+				when READ1 => send_cntr <= 0;
+				when READ2 => send_cntr <= 0;
 				when SHIFT =>
 					if(send_cntr = 0) then
 						send_cntr <= 1;
@@ -95,42 +96,61 @@ begin
 				--IDLE STATE
 				when IDLE =>
 
-					if(valid = '1') then --IDLE -> SHIFT
-						cmd_reg <= cmd;
-						mode_reg <= mode;
-						lcd_csn <= '0';
-						ready <= '0';
-						fsm_cntr <= 7;
-						fsm <= SHIFT;
+					if(empty = '0') then --IDLE -> SHIFT
+						rd <= '1';
+						fsm <= READ1;
 					else
-						ready <= '1';
-						lcd_csn <= '1';
+						rd <= '0';
 					end if;
 
+					lcd_csn <= '1';
 					mosi <= '0';
 					miso <= '0';
 					sck_wire <= '0';
+					
+				when READ1 =>
+					lcd_csn <= '0';
+					mosi <= '0';
+					miso <= '0';
+					sck_wire <= '0';
+					
+					rd <= '0';
+
+					fsm <= READ2;
+					
+				when READ2 =>
+					lcd_csn <= '0';
+					mosi <= '0';
+					miso <= '0';
+					sck_wire <= '0';
+					
+					rd <= '0';
+					cmd_reg <= din(7 downto 0);
+					mode_reg <= din(8);
+					
+					fsm_cntr <= 7;
+					fsm <= SHIFT;
 
 				--SHIFT STATE
 				when SHIFT =>
-					if(send_cntr = 1 and fsm_cntr = 0) then --SHIFT -> IDLE
+					if(send_cntr = 0 and fsm_cntr = 0) then --SHIFT -> IDLE
 						lcd_csn <= '1';
 						sck_wire <= '0';
 						miso <= mode_reg;
-						ready <= '1';
 						fsm <= IDLE;
 					else
 						lcd_csn <= '0';
 						sck_wire <= not(sck_wire);
-						ready <= '0';
 					end if;
 
-					if(send_cntr = 1) then
+					if(send_cntr = 0) then
 						mosi <= cmd_reg(7);
 						cmd_reg <= cmd_reg(6 downto 0) & '0';
 
 						fsm_cntr <= fsm_cntr - 1;
 					end if;
+					
+					rd <= '0';
 
 				when others => fsm <= IDLE;
 			end case;

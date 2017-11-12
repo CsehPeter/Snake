@@ -139,12 +139,12 @@ implementation/system_microblaze_0_d_bram_ctrl_wrapper.ngc \
 implementation/system_microblaze_0_bram_block_wrapper.ngc \
 implementation/system_microblaze_0_wrapper.ngc \
 implementation/system_logsys_axi_sp6_simpleio_0_wrapper.ngc \
+implementation/system_lcd_ip_0_wrapper.ngc \
 implementation/system_debug_module_wrapper.ngc \
 implementation/system_clock_generator_0_wrapper.ngc \
 implementation/system_axi_timer_0_wrapper.ngc \
 implementation/system_axi4lite_0_wrapper.ngc \
-implementation/system_rs232_wrapper.ngc \
-implementation/system_lcd_ip_0_wrapper.ngc
+implementation/system_rs232_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 

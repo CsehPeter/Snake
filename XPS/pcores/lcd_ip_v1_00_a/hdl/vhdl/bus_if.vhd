@@ -116,8 +116,8 @@ cmd <= cmd_reg(8 downto 0);
 ---------------------------------------------------------------------------------------
 --	Bus ACKnowledge and ERROR signals
 ---------------------------------------------------------------------------------------
-IP2Bus_RdAck <= '1' when (Bus2IP_RdCE = '0' and Bus2IP_BE = "1111") else '0';
-IP2Bus_WrAck <= '1' when (Bus2IP_WrCE = '0' and Bus2IP_BE = "1111") else '0';
+IP2Bus_RdAck <= '1' when (Bus2IP_RdCE = '1' and Bus2IP_BE = "1111") else '0';
+IP2Bus_WrAck <= '1' when (Bus2IP_WrCE = '1' and Bus2IP_BE = "1111") else '0';
 IP2Bus_Error <= '0';
 
 end rtl;
