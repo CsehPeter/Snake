@@ -31,13 +31,16 @@ port
 	--Inner signals
 	empty : in std_logic;
 	rd : out std_logic;
-	din : in std_logic_vector(8 downto 0)
+	din : in std_logic_vector(8 downto 0);
+	
+	--Stat signal
+	sh : out std_logic
 );
 end spi;
 
 architecture rtl of spi is
 
-signal send_cntr : integer range 0 to 1 := 0;
+
 
 signal fsm_cntr : integer range 0 to 7 := 0;
 
@@ -48,6 +51,15 @@ signal cmd_reg : std_logic_vector(7 downto 0) := (others => '0');
 signal mode_reg : std_logic := '0';
 
 signal sck_wire : std_logic := '0';
+
+signal cont_send : std_logic := '0';
+
+signal shift_end : std_logic := '0';
+
+signal send_cntr : std_logic_vector(4 downto 0) := (others => '0'); --0 to 20
+
+signal rise : std_logic := '0';
+signal fall : std_logic := '0';
 
 begin
 
@@ -64,27 +76,35 @@ proc_clk_div : process(clk)
 begin
 	if(rising_edge(clk)) then
 		if(rst = '1') then
-			send_cntr <= 0;
+			send_cntr <= (others => '0');
 		else
 			case fsm is
-				when IDLE => send_cntr <= 0;
-				when READ1 => send_cntr <= 0;
-				when READ2 => send_cntr <= 0;
 				when SHIFT =>
-					if(send_cntr = 0) then
-						send_cntr <= 1;
-					else
-						send_cntr <= 0;
-					end if;
-				when others => send_cntr <= 0;
+                if(cont_send = '1' and to_integer(unsigned(send_cntr)) = 18) then
+                    send_cntr <= "00010";
+                else
+                    if(to_integer(unsigned(send_cntr)) = 20) then
+                        send_cntr <= (others => '0');
+                    else
+                        send_cntr <= std_logic_vector(unsigned(send_cntr) + 1);
+                    end if;
+                end if;
+				when others => send_cntr <= (others => '0');
 			end case;
 		end if;
 	end if;
 end process proc_clk_div;
 
+rise <= '1' when send_cntr(0) = '0' else '0';
+fall <= '1' when send_cntr(0) = '1' else '0';
+
 ---------------------------------------------------------------------------------------
 --	Finite State Machine
 ---------------------------------------------------------------------------------------
+sck <= sck_wire;
+
+sh <= '1' when (fsm = SHIFT) else '0';
+
 proc_fsm : process(clk)
 begin
 	if(rising_edge(clk)) then
@@ -109,7 +129,8 @@ begin
 					sck_wire <= '0';
 					
 				when READ1 =>
-					lcd_csn <= '0';
+				
+					lcd_csn <= '1';
 					mosi <= '0';
 					miso <= '0';
 					sck_wire <= '0';
@@ -119,7 +140,8 @@ begin
 					fsm <= READ2;
 					
 				when READ2 =>
-					lcd_csn <= '0';
+				
+					lcd_csn <= '1';
 					mosi <= '0';
 					miso <= '0';
 					sck_wire <= '0';
@@ -133,31 +155,63 @@ begin
 
 				--SHIFT STATE
 				when SHIFT =>
-					if(send_cntr = 0 and fsm_cntr = 0) then --SHIFT -> IDLE
-						lcd_csn <= '1';
-						sck_wire <= '0';
-						miso <= mode_reg;
-						fsm <= IDLE;
-					else
+
+					if(to_integer(unsigned(send_cntr)) < 1) then
 						lcd_csn <= '0';
-						sck_wire <= not(sck_wire);
+						mosi <= '0';
+						miso <= '0';
+						sck_wire <= '0';
+					else
+					   
+                       --SCK vezérlés
+                        if(to_integer(unsigned(send_cntr)) < 18) then
+                            if(rise = '1') then
+                              sck_wire <= '1';
+                            end if;
+                            if(fall = '1') then
+                              sck_wire <= '0';
+                            end if;
+						end if;
+						
+						--MOSI & MISO
+						if(fall = '1' and to_integer(unsigned(send_cntr)) < 19) then
+						  mosi <= cmd_reg(7);
+						  cmd_reg <= cmd_reg(6 downto 0) & '0';
+						  
+                            if(to_integer(unsigned(send_cntr)) = 15) then
+                                miso <= mode_reg;
+                            else
+                                miso <= '0';
+                            end if;
+						end if;
+						
+						if(to_integer(unsigned(send_cntr)) = 16 and empty = '0') then
+                            cont_send <= '1';
+                            rd <= '1';
+						end if;
+						if(to_integer(unsigned(send_cntr)) = 17 and cont_send = '1') then
+                            cont_send <= '1';
+                            rd <= '0';
+                        end if;
+                        if(to_integer(unsigned(send_cntr)) = 18 and cont_send = '1') then
+                            cont_send <= '0';
+                            rd <= '0';
+                            cmd_reg <= din(7 downto 0);
+                            mode_reg <= din(8);
+                            
+                            
+                        end if;
+                        
+                        if(to_integer(unsigned(send_cntr)) = 19) then
+                            fsm <= IDLE;
+                        end if;
+						
 					end if;
-
-					if(send_cntr = 0) then
-						mosi <= cmd_reg(7);
-						cmd_reg <= cmd_reg(6 downto 0) & '0';
-
-						fsm_cntr <= fsm_cntr - 1;
-					end if;
-					
-					rd <= '0';
 
 				when others => fsm <= IDLE;
 			end case;
 		end if;
 	end if;
 end process proc_fsm;
-
-sck <= sck_wire;
 
 end rtl;

@@ -39,7 +39,13 @@ port
 	--Inner signals
 	cmd : out std_logic_vector(8 downto 0);
 	wr : out std_logic;
-	full : in std_logic
+	full : in std_logic;
+	
+	--Status signals
+	stat_empty : in std_logic;
+	stat_spi_busy : in std_logic;
+	stat_fifo_neg : in std_logic;
+	stat_spi_neg : in Std_logic
 );
 end bus_if;
 
@@ -105,6 +111,10 @@ begin
 				else
 					cmd_reg(12) <= '1';
 				end if;
+				cmd_reg(31) <= stat_empty;
+				cmd_reg(30) <= stat_spi_busy;
+				cmd_reg(29) <= stat_fifo_neg;
+				cmd_reg(28) <= stat_spi_neg;
 				wr <= '0';
 			end if;
 		end if;

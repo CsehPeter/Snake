@@ -42,21 +42,45 @@ wire rd;
 wire wr;
 wire [8:0] cmd2fifo;
 wire [8:0] cmd2spi;
+wire sh;
+
+wire stat_empty = empty;
+wire stat_spi_busy = sh;
+
+reg stat_fifo_neg;
+reg stat_spi_neg;
+
+always @ (posedge Bus2IP_Clk)
+begin
+	if(rst == 1) begin
+		stat_fifo_neg <= 0;
+		stat_spi_neg <= 0;
+	end else begin
+		if(rd == 1)
+			stat_fifo_neg <= ~stat_fifo_neg;
+		if(sh == 1)
+			stat_spi_neg <= 1;
+	end
+end
 
 bus_if bus_if_inst(
-   .Bus2IP_Clk(Bus2IP_Clk),
-   .Bus2IP_Resetn(Bus2IP_Resetn),
-   .Bus2IP_Data(Bus2IP_Data),
-   .Bus2IP_BE(Bus2IP_BE),
-   .Bus2IP_RdCE(Bus2IP_RdCE[0]),
-   .Bus2IP_WrCE(Bus2IP_WrCE[0]),
-   .IP2Bus_Data(IP2Bus_Data),
-   .IP2Bus_RdAck(IP2Bus_RdAck),
-   .IP2Bus_WrAck(IP2Bus_WrAck),
-   .IP2Bus_Error(IP2Bus_Error),
-   .cmd(cmd2fifo),
-   .wr(wr),
-   .full(full)
+	.Bus2IP_Clk(Bus2IP_Clk),
+	.Bus2IP_Resetn(Bus2IP_Resetn),
+	.Bus2IP_Data(Bus2IP_Data),
+	.Bus2IP_BE(Bus2IP_BE),
+	.Bus2IP_RdCE(Bus2IP_RdCE[0]),
+	.Bus2IP_WrCE(Bus2IP_WrCE[0]),
+	.IP2Bus_Data(IP2Bus_Data),
+	.IP2Bus_RdAck(IP2Bus_RdAck),
+	.IP2Bus_WrAck(IP2Bus_WrAck),
+	.IP2Bus_Error(IP2Bus_Error),
+	.cmd(cmd2fifo),
+	.wr(wr),
+	.full(full),
+	.stat_empty(stat_empty),
+	.stat_spi_busy(stat_spi_busy),
+	.stat_fifo_neg(stat_fifo_neg),
+	.stat_spi_neg(stat_spi_neg)
 );
 
 fifo fifo_inst(
@@ -81,7 +105,8 @@ spi spi_inst(
 	.miso(miso),
 	.empty(empty),
 	.rd(rd),
-	.din(cmd2spi)
+	.din(cmd2spi),
+	.sh(sh)
 );
 
 endmodule

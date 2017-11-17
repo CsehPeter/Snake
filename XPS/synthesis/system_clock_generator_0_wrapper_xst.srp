@@ -3,7 +3,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to E:\Snake\XPS\synthesis\xst_temp_dir\
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.07 secs
  
 --> 
@@ -319,7 +319,7 @@ Cross Clock Domains Report:
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.64 secs
+Total CPU time to Xst completion: 3.70 secs
  
 --> 
 

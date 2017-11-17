@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sun Nov 12 23:35:34 2017
+// Written by: Map P.20131013 on Fri Nov 17 01:15:41 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -3035,17 +3035,10 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "microblaze_0_i_bram_ctrl/microblaze_0_i_bram_ctrl/lmb_as" BEL
         "microblaze_0_d_bram_ctrl/microblaze_0_d_bram_ctrl/Sl_Rdy" BEL
         "microblaze_0_d_bram_ctrl/microblaze_0_d_bram_ctrl/lmb_as" BEL
-        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/fifo_inst/empty" BEL
-        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/fifo_inst/full" BEL
-        "lcd_ip_0/lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rvalid_i"
-        BEL
-        "lcd_ip_0/lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
-        BEL "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/lcd_csn" BEL
-        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/mode_reg" BEL
-        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/rd" BEL
-        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_0" BEL
-        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/miso" BEL
-        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/sck_wire" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd1_1" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd2_1" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/cont_send" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_0_1" BEL
         "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_0" BEL
         "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_1" BEL
         "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_2" BEL
@@ -3054,10 +3047,23 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_5" BEL
         "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_6" BEL
         "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/cmd_reg_7" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/lcd_csn" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/sck_wire" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/fifo_inst/empty" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/fifo_inst/full" BEL
+        "lcd_ip_0/lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rvalid_i"
+        BEL
+        "lcd_ip_0/lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
+        BEL "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/stat_spi_neg" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/mode_reg" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_0" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_1" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_2" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_3" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_4" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/miso" BEL
+        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/rd" BEL
         "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/mosi" BEL
-        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_cntr_0" BEL
-        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_cntr_1" BEL
-        "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_cntr_2" BEL
         "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd2" BEL
         "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd1" BEL
         "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/fifo_inst/dout_0" BEL
@@ -3200,7 +3206,7 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "lcd_ip_0/lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3"
         BEL
         "lcd_ip_0/lcd_ip_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
-        BEL
+        BEL "lcd_ip_0/lcd_ip_0/USER_LOGIC_I/stat_fifo_neg" BEL
         "axi_timer_0/axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1"
         BEL
         "axi_timer_0/axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_1"

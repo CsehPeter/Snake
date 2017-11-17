@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 TABLE OF CONTENTS
@@ -2379,7 +2379,7 @@ axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/S_AXI_ACLK|    1.6
 
 
 Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.76 secs
+Total CPU time to Xst completion: 8.71 secs
  
 --> 
 

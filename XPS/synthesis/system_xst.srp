@@ -1010,7 +1010,7 @@ Optimizing unit <system> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 39.
+Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 40.
 INFO:Xst:2260 - The FF/Latch <RS232/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <RS232> is equivalent to the following FF/Latch : <RS232/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi4lite_0> is equivalent to the following 3 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_2> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_3> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi4lite_0> is equivalent to the following 2 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_2> 
@@ -1022,6 +1022,9 @@ INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_29> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_29_1> 
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_28> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_28_1> 
 INFO:Xst:2260 - The FF/Latch <microblaze_0_intc/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <microblaze_0_intc> is equivalent to the following FF/Latch : <microblaze_0_intc/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
+INFO:Xst:2260 - The FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd1> in Unit <lcd_ip_0> is equivalent to the following FF/Latch : <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd1_1> 
+INFO:Xst:2260 - The FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_0> in Unit <lcd_ip_0> is equivalent to the following FF/Latch : <lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_0_1> 
+INFO:Xst:2260 - The FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd2> in Unit <lcd_ip_0> is equivalent to the following FF/Latch : <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd2_1> 
 INFO:Xst:2260 - The FF/Latch <axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <axi_timer_0> is equivalent to the following FF/Latch : <axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
 INFO:Xst:2260 - The FF/Latch <axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR1_GENERATE[21].TCSR1_FF_I> in Unit <axi_timer_0> is equivalent to the following FF/Latch : <axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR0_GENERATE[21].TCSR0_FF_I> 
 INFO:Xst:2260 - The FF/Latch <RS232/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <RS232> is equivalent to the following FF/Latch : <RS232/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
@@ -1035,6 +1038,9 @@ INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_29> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_29_1> 
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_28> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_28_1> 
 INFO:Xst:2260 - The FF/Latch <microblaze_0_intc/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <microblaze_0_intc> is equivalent to the following FF/Latch : <microblaze_0_intc/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
+INFO:Xst:2260 - The FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_0> in Unit <lcd_ip_0> is equivalent to the following FF/Latch : <lcd_ip_0/USER_LOGIC_I/spi_inst/send_cntr_0_1> 
+INFO:Xst:2260 - The FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd2> in Unit <lcd_ip_0> is equivalent to the following FF/Latch : <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd2_1> 
+INFO:Xst:2260 - The FF/Latch <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd1> in Unit <lcd_ip_0> is equivalent to the following FF/Latch : <lcd_ip_0/USER_LOGIC_I/spi_inst/fsm_FSM_FFd1_1> 
 INFO:Xst:2260 - The FF/Latch <axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR1_GENERATE[21].TCSR1_FF_I> in Unit <axi_timer_0> is equivalent to the following FF/Latch : <axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR0_GENERATE[21].TCSR0_FF_I> 
 INFO:Xst:2260 - The FF/Latch <axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <axi_timer_0> is equivalent to the following FF/Latch : <axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
 
@@ -1065,32 +1071,32 @@ Top Level Output File Name         : system.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3817
+# BELS                             : 3868
 #      GND                         : 16
 #      INV                         : 56
 #      LUT1                        : 37
-#      LUT2                        : 298
-#      LUT3                        : 574
-#      LUT4                        : 404
+#      LUT2                        : 299
+#      LUT3                        : 569
+#      LUT4                        : 419
 #      LUT5                        : 500
-#      LUT6                        : 920
+#      LUT6                        : 952
 #      LUT6_2                      : 96
 #      MULT_AND                    : 2
 #      MUXCY                       : 145
 #      MUXCY_L                     : 291
-#      MUXF7                       : 178
+#      MUXF7                       : 186
 #      VCC                         : 11
 #      XORCY                       : 289
-# FlipFlops/Latches                : 2621
-#      FD                          : 283
+# FlipFlops/Latches                : 2628
+#      FD                          : 292
 #      FDC                         : 38
 #      FDC_1                       : 5
 #      FDCE                        : 15
-#      FDE                         : 420
+#      FDE                         : 409
 #      FDE_1                       : 8
 #      FDP                         : 5
-#      FDR                         : 777
-#      FDRE                        : 1008
+#      FDR                         : 787
+#      FDRE                        : 1007
 #      FDRE_1                      : 1
 #      FDS                         : 21
 #      FDSE                        : 40
@@ -1122,19 +1128,19 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2621  out of  11440    22%  
- Number of Slice LUTs:                 3078  out of   5720    53%  
-    Number used as Logic:              2885  out of   5720    50%  
+ Number of Slice Registers:            2628  out of  11440    22%  
+ Number of Slice LUTs:                 3121  out of   5720    54%  
+    Number used as Logic:              2928  out of   5720    51%  
     Number used as Memory:              193  out of   1440    13%  
        Number used as RAM:               76
        Number used as SRL:              117
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4330
-   Number with an unused Flip Flop:    1709  out of   4330    39%  
-   Number with an unused LUT:          1252  out of   4330    28%  
-   Number of fully used LUT-FF pairs:  1369  out of   4330    31%  
-   Number of unique control sets:       165
+ Number of LUT Flip Flop pairs used:   4372
+   Number with an unused Flip Flop:    1744  out of   4372    39%  
+   Number with an unused LUT:          1251  out of   4372    28%  
+   Number of fully used LUT-FF pairs:  1377  out of   4372    31%  
+   Number of unique control sets:       164
 
 IO Utilization: 
  Number of IOs:                          21
@@ -1168,7 +1174,7 @@ Clock Information:
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                                                                             | Load  |
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
-clk50M                             | PLL_ADV:CLKOUT0                                                                                                   | 2542  |
+clk50M                             | PLL_ADV:CLKOUT0                                                                                                   | 2549  |
 debug_module/debug_module/drck_i   | BUFG                                                                                                              | 193   |
 debug_module/Ext_JTAG_UPDATE       | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Use_Debug_Logic.Master_Core.Debug_Perf/command_reg_0)| 40    |
 RS232/Interrupt                    | NONE(microblaze_0_intc/microblaze_0_intc/INTC_CORE_I/intr_sync_1)                                                 | 1     |
@@ -1195,7 +1201,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk50M'
   Clock period: 10.195ns (frequency: 98.092MHz)
-  Total number of paths / destination ports: 421119 / 6952
+  Total number of paths / destination ports: 421553 / 6956
 -------------------------------------------------------------------------
 Delay:               10.195ns (Levels of Logic = 9)
   Source:            axi_timer_0/axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5 (FF)
@@ -1493,7 +1499,7 @@ debug_module/debug_module/drck_i|    2.860|    3.860|    3.740|         |
 
 
 Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.88 secs
+Total CPU time to Xst completion: 12.92 secs
  
 --> 
 
@@ -1501,5 +1507,5 @@ Total memory usage is 181128 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    4 (   0 filtered)
-Number of infos    :  880 (   0 filtered)
+Number of infos    :  886 (   0 filtered)
 

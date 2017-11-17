@@ -46,8 +46,6 @@ signal cnt : integer range 0 to DEPTH := 0;
 signal rd_pt : integer range 0 to (DEPTH - 1) := 0;
 signal wr_pt : integer range 0 to (DEPTH - 1) := 0;
 
-signal op : std_logic_vector(1 downto 0);
-
 begin
 
 
