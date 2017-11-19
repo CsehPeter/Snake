@@ -67,18 +67,6 @@ rst <= not(Bus2IP_Resetn);
 ---------------------------------------------------------------------------------------
 --	Bus READ
 ---------------------------------------------------------------------------------------
---proc_read : process(clk)
---begin
---	if(rising_edge(clk)) then
---		if(rst = '1') then
---			IP2Bus_Data <= (others => '0');
---		else
---			if(Bus2IP_RdCE = "1" and Bus2IP_BE = "1111") then
---				IP2Bus_Data <= cmd_reg;
---			end if;
---		end if;	
---	end if;
---end process proc_read;
 
 IP2Bus_Data <= cmd_reg when (Bus2IP_RdCE = '1' and Bus2IP_BE = "1111") else (others => '0');
 
