@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 TABLE OF CONTENTS
@@ -1100,10 +1100,10 @@ Primitive and Black Box Usage:
 #      FDRE_1                      : 1
 #      FDS                         : 21
 #      FDSE                        : 40
-# RAMS                             : 35
+# RAMS                             : 51
 #      RAM32M                      : 16
 #      RAM64M                      : 3
-#      RAMB16BWER                  : 16
+#      RAMB16BWER                  : 32
 # Shift Registers                  : 117
 #      SRL16                       : 1
 #      SRL16E                      : 18
@@ -1147,8 +1147,8 @@ IO Utilization:
  Number of bonded IOBs:                  21  out of    102    20%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:               16  out of     32    50%  
-    Number using Block RAM only:         16
+ Number of Block RAM/FIFO:               32  out of     32   100%  
+    Number using Block RAM only:         32
  Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
  Number of DSP48A1s:                      3  out of     16    18%  
  Number of PLL_ADVs:                      1  out of      2    50%  
@@ -1174,7 +1174,7 @@ Clock Information:
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                                                                             | Load  |
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
-clk50M                             | PLL_ADV:CLKOUT0                                                                                                   | 2549  |
+clk50M                             | PLL_ADV:CLKOUT0                                                                                                   | 2565  |
 debug_module/debug_module/drck_i   | BUFG                                                                                                              | 193   |
 debug_module/Ext_JTAG_UPDATE       | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Use_Debug_Logic.Master_Core.Debug_Perf/command_reg_0)| 40    |
 RS232/Interrupt                    | NONE(microblaze_0_intc/microblaze_0_intc/INTC_CORE_I/intr_sync_1)                                                 | 1     |
@@ -1201,7 +1201,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk50M'
   Clock period: 10.195ns (frequency: 98.092MHz)
-  Total number of paths / destination ports: 421553 / 6956
+  Total number of paths / destination ports: 546449 / 7580
 -------------------------------------------------------------------------
 Delay:               10.195ns (Levels of Logic = 9)
   Source:            axi_timer_0/axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_5 (FF)
@@ -1290,7 +1290,7 @@ Delay:               5.758ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk50M'
-  Total number of paths / destination ports: 25 / 25
+  Total number of paths / destination ports: 41 / 41
 -------------------------------------------------------------------------
 Offset:              2.382ns (Levels of Logic = 3)
   Source:            rstbt (PAD)
@@ -1498,12 +1498,12 @@ debug_module/debug_module/drck_i|    2.860|    3.860|    3.740|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.40 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 13.59 secs
  
 --> 
 
-Total memory usage is 181128 kilobytes
+Total memory usage is 182152 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    4 (   0 filtered)

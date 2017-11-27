@@ -43,8 +43,8 @@ Performing IP level DRCs on properties...
 
 Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
 Address Map for Processor microblaze_0
-  (0000000000-0x00007fff) microblaze_0_d_bram_ctrl	microblaze_0_dlmb
-  (0000000000-0x00007fff) microblaze_0_i_bram_ctrl	microblaze_0_ilmb
+  (0000000000-0x0000ffff) microblaze_0_d_bram_ctrl	microblaze_0_dlmb
+  (0000000000-0x0000ffff) microblaze_0_i_bram_ctrl	microblaze_0_ilmb
   (0x40000000-0x4000ffff) microblaze_0_intc	axi4lite_0
   (0x41000000-0x4100ffff) axi_timer_0	axi4lite_0
   (0x42000000-0x4200ffff) RS232	axi4lite_0
@@ -59,7 +59,7 @@ INFO:EDK:4130 - IPNAME: lmb_v10, INSTANCE:microblaze_0_dlmb - tool is overriding
    C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_v10_v2_00_b\data
    \lmb_v10_v2_1_0.mpd line 82 
 INFO:EDK:4130 - IPNAME: bram_block, INSTANCE:microblaze_0_bram_block - tool is
-   overriding PARAMETER C_MEMSIZE value to 0x8000 -
+   overriding PARAMETER C_MEMSIZE value to 0x10000 -
    C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\d
    ata\bram_block_v2_1_0.mpd line 78 
 
@@ -250,4 +250,4 @@ INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
 
 Rebuilding cache ...
 
-Total run time: 38.00 seconds
+Total run time: 28.00 seconds

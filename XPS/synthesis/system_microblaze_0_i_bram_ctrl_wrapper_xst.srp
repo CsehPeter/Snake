@@ -3,8 +3,8 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to E:\Snake\XPS\synthesis\xst_temp_dir\
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> 
 TABLE OF CONTENTS
@@ -127,7 +127,7 @@ Unit <system_microblaze_0_i_bram_ctrl_wrapper> synthesized.
 Synthesizing Unit <lmb_bram_if_cntlr>.
     Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_bram_if_cntlr.vhd".
         C_FAMILY = "spartan6"
-        C_HIGHADDR = "00000000000000000111111111111111"
+        C_HIGHADDR = "00000000000000001111111111111111"
         C_BASEADDR = "00000000000000000000000000000000"
         C_MASK = "01000000000000000000000000000000"
         C_MASK1 = "00000000100000000000000000000000"
@@ -448,8 +448,8 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.77 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.87 secs
  
 --> 
 
